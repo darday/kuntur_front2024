@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kuntur-front": {
+    "credits_clients": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/kuntur-front",
+            "outputPath": "dist/credits_clients",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,6 +27,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -59,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "kuntur-front:build:production"
+              "buildTarget": "credits_clients:build:production"
             },
             "development": {
-              "buildTarget": "kuntur-front:build:development"
+              "buildTarget": "credits_clients:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,6 +86,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "b1cc0c92-e5cc-4f51-aa77-306f3976ec96"
+    "analytics": false
   }
 }

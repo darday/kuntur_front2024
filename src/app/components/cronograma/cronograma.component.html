@@ -1,0 +1,15 @@
+<mat-tab-group style="background-color: rgb(255, 219, 0); margin: 0% 3%;">
+    <!-- Pestaña de Noviembre con imagen -->
+    <mat-tab label="NOVIEMBRE">
+        <div class="november-content" style="background-color: white;">
+            <img src="assets/carousel/1.png" width="100%" alt="Imagen de Noviembre" class="november-image">
+        </div>
+    </mat-tab>
+
+    <!-- Pestañas dinámicas para los días -->
+    <mat-tab *ngFor="let day of days" [label]="day.label">
+        <div class="day-content">
+            <p>{{ day.content }}</p>
+        </div>
+    </mat-tab>
+</mat-tab-group>
