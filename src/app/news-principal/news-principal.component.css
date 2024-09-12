@@ -1,0 +1,78 @@
+.content-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Este es el espacio entre las tarjetas normales */
+    justify-content: space-between;
+    padding: 3% 3%;
+}
+
+.card-container {
+    flex: 1 1 calc(30% - 10px);
+    /* Las primeras 3 tarjetas ocupan el 30% del ancho */
+    max-width: 24%;
+    /* Limita el ancho máximo de las tarjetas */
+}
+
+.card-container:nth-child(3) {
+    margin-right: 3%;
+    /* Añade espacio extra después de la tercera tarjeta */
+}
+
+.instagram-container {
+    flex: 1 1 calc(20% - 20px);
+    /* La tarjeta de Instagram ocupa menos espacio */
+    max-width: 23%;
+    /* Ancho máximo de la tarjeta de Instagram */
+    background-color: #ccc;
+    /* Fondo opcional */
+}
+
+mat-card {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+
+    .card-container,
+    .instagram-container {
+        flex: 1 1 calc(50% - 20px);
+        /* En pantallas medianas, las tarjetas ocuparán el 50% */
+    }
+}
+
+@media (max-width: 900px) {
+
+    .card-container,
+    .instagram-container {
+        flex: 1 1 100%;
+        /* En pantallas pequeñas, las tarjetas ocuparán el 100% */
+    }
+
+    .content-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        /* Este es el espacio entre las tarjetas normales */
+        justify-content: space-between;
+        padding: 0% 3%;
+        padding-bottom: 10%;
+    }
+
+    .card-container {
+        flex: 1 1 calc(30% - 10px);
+        /* Las primeras 3 tarjetas ocupan el 30% del ancho */
+        max-width: 47%;
+        /* Limita el ancho máximo de las tarjetas */
+        padding: 1%;
+    }
+
+    .instagram-container {
+        flex: 1 1 calc(20% - 20px);
+        /* La tarjeta de Instagram ocupa menos espacio */
+        max-width: 48%;
+        /* Ancho máximo de la tarjeta de Instagram */
+        background-color: #ccc;
+        /* Fondo opcional */
+    }
+}
