@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CronogramaComponent } from './components/cronograma/cronograma.component';
 import { NewsTittleComponent } from './components/news-tittle/news-tittle.component';
-import { NewsPrincipalComponent } from './news-principal/news-principal.component';
-import { PatrocinadoresComponent } from './patrocinadores/patrocinadores.component';
-import { SuscriptionComponent } from './suscription/suscription.component';
+import { NewsPrincipalComponent } from './components/news-principal/news-principal.component';
+import { PatrocinadoresComponent } from './components/patrocinadores/patrocinadores.component';
+import { SuscriptionComponent } from './components/suscription/suscription.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { SuscriptionComponent } from './suscription/suscription.component';
     NewsTittleComponent,
     NewsPrincipalComponent,
     PatrocinadoresComponent,
-    SuscriptionComponent
+    SuscriptionComponent,
+    HttpClientModule
     
   ],
   templateUrl: './app.component.html',
