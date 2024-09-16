@@ -4,21 +4,35 @@
         <h2>SUSCRIBIRSE</h2>
         <p>
             ¡No te pierdas nada del Festival Kunturñawi! Suscríbete ahora y recibe toda la información de primera mano,
-            incluyendo la agenda completa del festival.  Es muy sencillo, solo ingresa tu nombre y correo electrónico para formar parte de nuestra comunidad y
+            incluyendo la agenda completa del festival. Es muy sencillo, solo ingresa tu nombre y correo electrónico
+            para formar parte de nuestra comunidad y
             mantenerte al día con las últimas novedades.
         </p>
-        <p>
-           
-        </p>
-
     </div>
 
     <!-- Sección de formulario a la derecha -->
     <div class="subscribe-form" style="text-align: center;">
-        <input type="text" placeholder="Nombres" class="input-field">
-        <input type="email" placeholder="Correo electrónico" class="input-field">
-        <!-- <button class="subscribe-button">Suscribirse</button> -->
-        <button mat-button class="subscribe-button"><span style="color:white;">Suscribirse</span></button>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+            <input type="text" [(ngModel)]="name" name="name" style="" placeholder="Nombres" class="input-field"
+                required minlength="2" #nameModel="ngModel">
+            <!-- Mostrar mensaje de error solo cuando el formulario se ha enviado y el campo 'name' es inválido -->
+            <div *ngIf="form.submitted && nameModel.invalid" class="input-field" style="color:white;">
+                <span>El nombre es requerido.</span>
+            </div>
 
+            <input type="email" [(ngModel)]="email" name="email" style="margin-top: 2%" placeholder="Correo electrónico"
+                class="input-field" required email #emailModel="ngModel">
+            <!-- Mostrar mensaje de error solo cuando el formulario se ha enviado y el campo 'email' es inválido -->
+            <div *ngIf="form.submitted && emailModel.invalid" class="input-field" style="color:white;">
+                Ingresa un correo electrónico válido.
+            </div>
+
+            <button mat-button type="submit" class="subscribe-button" style="margin-top: 2%;" [disabled]="loading">
+                <span style="color:white;">Suscribirse</span>
+            </button>
+        </form>
+
+        <!-- Barra de progreso visible solo mientras la petición está en curso -->
+        <mat-progress-bar *ngIf="loading" mode="indeterminate" style="align-items: center;"></mat-progress-bar>
     </div>
 </div>

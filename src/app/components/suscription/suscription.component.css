@@ -1,84 +1,92 @@
 .subscribe-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6c6c6c; /* Color de fondo gris oscuro */
-    padding: 5% 10%;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6c6c6c;
+  /* Color de fondo gris oscuro */
+  padding: 5% 10%;
+  color: white;
+}
+
+.subscribe-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.subscribe-text h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.subscribe-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.subscribe-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 40%;
+  align-items: center;
+}
+
+.input-field {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  width: 100%;
+}
+
+.subscribe-button {
+  padding: 5% 25%;
+  font-size: 18px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.subscribe-button:hover {
+  background-color: rgb(165, 154, 154);
+  color: #6c6c6c;
+}
+
+
+@media (max-width: 768px) {
+  .subscribe-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 5% 2%;
+
   }
-  
+
   .subscribe-text {
-    flex: 1;
-    max-width: 500px;
-  }
-  
-  .subscribe-text h2 {
-    font-size: 36px;
-    font-weight: bold;
     margin-bottom: 20px;
-    color: white;
   }
-  
-  .subscribe-text p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
+
   .subscribe-form {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 40%;
+    max-width: 80%;
     align-items: center;
   }
-  
-  .input-field {
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;
-    outline: none;
-    width: 100%;
-  }
-  
-  .subscribe-button {
-    padding: 5% 25%;
-    font-size: 18px;
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
-  }
-  
-  .subscribe-button:hover {
-    background-color: rgb(165, 154, 154);
-    color: #6c6c6c;
-  }
-  
+}
 
-  @media (max-width: 768px) {
-    .subscribe-section {
-      flex-direction: column;
-      text-align: center;
-      padding: 5% 2%;
 
-    }
-  
-    .subscribe-text {
-      margin-bottom: 20px;
-    }
-
-    .subscribe-form {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-width: 80%;
-        align-items: center;
-      }
-  }
-  
+.mat-progress-bar {
+  height: 4px;
+  /* Asegúrate de que la altura de la barra sea suficiente */
+  margin-top: 20px;
+  /* Ajustar el margen para que no esté superpuesta */
+}
