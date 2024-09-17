@@ -12,7 +12,9 @@
                 <p style="text-align: justify; padding-top: 3%;">{{ card.content | slice:0:90 }}{{ card.content.length > 250 ? '...' : '' }}</p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>LEER MÁS</button>
+                <!-- <button mat-button>LEER MÁS</button> -->
+                <button mat-button (click)="navigateToDetail(card.id)">LEER MÁS</button>
+
                 <!-- <button mat-button>SHARE</button> -->
             </mat-card-actions>
         </mat-card>
