@@ -1,0 +1,35 @@
+.news-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 20px; */
+}
+
+.news-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    padding: 0% 3%;
+}
+
+.news-handle {
+    background-color: rgb(255, 219, 0);
+    color: black;
+    padding: 1% 1%;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-right: 3%;
+}
+
+.news-handle span {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size:x-large;
+}
+
+@media (max-width: 850px) {
+    .news-handle {
+      display: none;
+    }
+}

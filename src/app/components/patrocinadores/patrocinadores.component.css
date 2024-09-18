@@ -1,32 +1,17 @@
 .sponsors-section {
     background-color: #d3d3d3; /* Color de fondo gris */
     text-align: center;
-    padding: 40px 3%;
+    padding: 3% 3%;
+    padding-bottom: 5%;
   }
   
   .sponsors-section h2 {
     font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-weight: bolder;
+    margin-bottom: 2%;
     color: #333;
-  }
-  
-  .sponsor-subtitles {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
-  }
-  
-  .sponsor-subtitles div {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .sponsor-subtitles p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
+    letter-spacing: 0.1cap;
+    padding-top: 3%;
   }
   
   .sponsor-logos {
@@ -34,15 +19,48 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5%;
   }
   
   .sponsor-logos img {
-    max-height: 80px; /* Ajusta la altura máxima de los logos */
+    max-height: 11vh; /* Ajusta la altura máxima de los logos */
     object-fit: contain;
-    padding: 10px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1%;
+    padding-top: 4%;
+    background-color: rgba(255, 255, 255, 0);
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
   
+
+  /* Pantallas medianas (tablets y pantallas pequeñas) */
+@media (max-width: 768px) {
+  .sponsors-section h2 {
+      font-size: 28px; /* Reduce el tamaño del título */
+  }
+
+  .sponsor-logos {
+      justify-content: center; /* Centrar los logos */
+      gap: 10%; /* Aumentar el espacio entre los logos */
+  }
+
+  .sponsor-logos img {
+      max-height: 9vh; /* Reducir un poco el tamaño de los logos */
+  }
+}
+
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 480px) {
+  .sponsors-section h2 {
+      font-size: 24px; /* Ajusta el tamaño del título aún más pequeño */
+  }
+
+  .sponsor-logos {
+      flex-direction: column; /* Los logos se mostrarán en columnas */
+      gap: 15%; /* Mayor espacio entre los logos para pantallas pequeñas */
+  }
+
+  .sponsor-logos img {
+      max-height: 7vh; /* Reducir el tamaño de los logos para pantallas muy pequeñas */
+  }
+}

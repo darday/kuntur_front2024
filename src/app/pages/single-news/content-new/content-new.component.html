@@ -1,0 +1,29 @@
+<div class="news-section" *ngIf="newsData.Not_Titulo">
+    <!-- Se muestra solo si hay un título (es decir, si hay datos) -->
+    <!-- Título de la noticia -->
+    <h1 class="news-title">{{ newsData.Not_Titulo }}</h1>
+
+    <!-- Contenedor para las imágenes -->
+    <div class="image-container">
+        <!-- Imagen principal de la noticia -->
+        <img [src]="newsData.Not_imagen ? environment.apiUrlStorage + '/' + newsData.Not_imagen : 'assets/img/ct2.png'"
+            alt="Imagen de la noticia" class="news-image">
+        <img [src]="newsData.Not_imagen ? environment.apiUrlStorage + '/' + newsData.Not_imagen2 : 'assets/img/ct2.png'"
+            alt="Imagen de la noticia" class="news-image">
+
+    </div>
+
+    <!-- Contenido de la noticia -->
+    <div class="news-content">
+        <p style="text-align: justify;">{{ newsData.Not_Descripcion }}</p>
+    </div>
+
+    <div style="text-align: center; padding-top: 3%;">
+        <div class="example-button-container">
+            <button mat-fab extended (click)="navigateToDetail()">
+                <mat-icon>home</mat-icon>
+                REGRESAR A INICIO
+            </button>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,6 @@ export const routes: Routes = [
     { path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },  // Página principal
 
     { path: '', component: NewsPrincipalComponent },  // Ruta principal
-    { path: 'news/:id', component: SingleNewsComponent }, // Ruta que incluye el parámetro `id`
     { path: 'single-news/:id', component: SingleNewsComponent },  // Ruta para las noticias individuales con el ID
 
 ];

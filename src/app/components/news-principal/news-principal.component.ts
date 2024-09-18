@@ -48,7 +48,9 @@ export class NewsPrincipalComponent implements OnInit {
   // Función que se encargará de la navegación
   navigateToDetail(cardId: number) {
     if (cardId) {
-      this.router.navigate(['/single-news', cardId]);  // Redirige a la página de detalles con el ID en la URL
+      this.router.navigate(['/single-news', cardId]).then(()=>{
+        window.scrollTo(0, 0);
+      });  // Redirige a la página de detalles con el ID en la URL
     } else {
       console.error('El ID de la tarjeta es inválido:', cardId);
     }
