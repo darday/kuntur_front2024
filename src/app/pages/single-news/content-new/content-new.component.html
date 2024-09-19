@@ -1,4 +1,4 @@
-<div class="news-section" *ngIf="newsData.Not_Titulo">
+<div class="news-section" *ngIf="!isLoading">
     <!-- Se muestra solo si hay un título (es decir, si hay datos) -->
     <!-- Título de la noticia -->
     <h1 class="news-title">{{ newsData.Not_Titulo }}</h1>
@@ -26,4 +26,9 @@
             </button>
         </div>
     </div>
+</div>
+
+<!-- Mostrar el spinner mientras se están cargando los datos -->
+<div class="spinner-container" *ngIf="isLoading">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
 </div>

@@ -41,6 +41,13 @@
     white-space: pre-line;
 }
 
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* O ajusta según tus necesidades */
+}
+
 
 @media (max-width: 768px) {
     .image-container {

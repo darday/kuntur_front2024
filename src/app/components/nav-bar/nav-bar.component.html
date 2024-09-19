@@ -1,7 +1,7 @@
-<mat-toolbar color="primary" class="nav-bar">
+<mat-toolbar color="primary" class="nav-bar  animate__animated animate__fadeInDown ">
     <!-- Logo y Título -->
     <div class="logo-container">
-      <img src="assets/img/logos/logo.png" alt="Festival de Cine Ecuatoriano" class="festival-logo">
+      <a href="/"><img src="assets/img/logos/logo.png" alt="Festival de Cine Ecuatoriano" class="festival-logo"></a>
       <div class="festival-title">
         <!-- <span class="title-main">XIII EDICIÓN KUNTURÑAWI</span><br>
         <span class="title-sub">FESTIVAL DE CINE ECUATORIANO</span> -->
@@ -10,7 +10,7 @@
   
     <!-- Menú para pantallas grandes -->
     <div class="menu-options" [class.show]="menuOpen">
-      <a mat-button routerLink="/">INICIO</a>
+      <a mat-button href="/" >INICIO</a>
       <a mat-button routerLink="/festival">EL FESTIVAL</a>
       <a mat-button routerLink="/seleccion">SELECCIÓN OFICIAL</a>
       <a mat-button routerLink="/kuntur-lab">KUNTUR LAB</a>

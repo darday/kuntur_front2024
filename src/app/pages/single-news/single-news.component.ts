@@ -6,12 +6,21 @@ import { ReadTooComponent } from './read-too/read-too.component';
 import { NewsPrincipalComponent } from '../../components/news-principal/news-principal.component';
 import { PatrocinadoresComponent } from '../../components/patrocinadores/patrocinadores.component';
 import { SuscriptionComponent } from '../../components/suscription/suscription.component';
+import { CronogramaWithoutImgComponent } from '../../components/cronograma-without-img/cronograma-without-img.component';
 
 
 @Component({
   selector: 'app-single-news',
   standalone: true,
-  imports: [CronogramaComponent,ContentNewComponent,ReadTooComponent,NewsPrincipalComponent,PatrocinadoresComponent,SuscriptionComponent],
+  imports: [
+    CronogramaComponent,
+    ContentNewComponent,
+    ReadTooComponent,
+    NewsPrincipalComponent,
+    PatrocinadoresComponent,
+    SuscriptionComponent,
+    CronogramaWithoutImgComponent
+  ],
   templateUrl: './single-news.component.html',
   styleUrl: './single-news.component.css'
 })
