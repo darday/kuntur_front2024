@@ -32,6 +32,13 @@ mat-card {
     width: 100%;
 }
 
+mat-card img {
+    width: auto;
+    height: 55vh; /* Puedes ajustar esta altura según tus necesidades */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+    border-radius: 4px; /* Opcional: Para mantener bordes redondeados si los necesitas */
+}
+
 @media (max-width: 900px) {
 
     .card-container,
@@ -74,5 +81,12 @@ mat-card {
         /* Ancho máximo de la tarjeta de Instagram */
         background-color: #ccc;
         /* Fondo opcional */
+    }
+
+    mat-card img {
+        width: auto;
+        height: 25vh; /* Puedes ajustar esta altura según tus necesidades */
+        object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
+        border-radius: 4px; /* Opcional: Para mantener bordes redondeados si los necesitas */
     }
 }
