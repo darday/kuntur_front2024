@@ -59,10 +59,10 @@ export class CronogramaComponent implements OnInit {
     // Obtener la URL actual al iniciar el componente
     const currentUrl = this.router.url;
     console.log('URL en ngOnInit:', currentUrl); // Esto debería imprimir la URL actual al cargar el componente
-  
+
     // Aplicar lógica en función de la URL actual
     this.updateImageBasedOnUrl(currentUrl);
-  
+
     // Ahora nos suscribimos a los futuros eventos de navegación
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -73,14 +73,16 @@ export class CronogramaComponent implements OnInit {
       this.updateImageBasedOnUrl(newUrl);
     });
   }
-  
+
   updateImageBasedOnUrl(url: string) {
     if (url === '/' || url.startsWith('/home')) {
       this.currentImage = 'assets/carousel/1.png';
     } else if (url.startsWith('/seleccion-oficial')) {
       this.currentImage = 'assets/carousel/2.png';
+    } else if (url.startsWith('/largometraje-ficcion')) {
+      this.currentImage = 'assets/carousel/2.png';
     }
   }
 
-  
+
 }

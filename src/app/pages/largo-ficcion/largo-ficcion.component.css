@@ -1,16 +1,20 @@
 .image-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 40px;
     margin: 40px 0;
+    padding: 0% 15%;
+
 }
 
 .image-link {
     text-align: center;
     text-decoration: none;
+    /* Elimina el subrayado del enlace */
     color: #333;
-    width: 250px;
+    /* Asegura que el texto sea visible */
+    width: 300px;
     /* Establece un ancho fijo para los cuadros */
 }
 
@@ -31,28 +35,30 @@
     /* Sombra al pasar el mouse */
 }
 
-.image-text {
-    font-size: 18px;
+.image-title {
+    font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
-    transition: color 0.3s ease;
 }
 
-.image-link:hover .image-text {
+.image-subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 5px;
+    color: #555;
+}
+
+.image-link:hover .image-title,
+.image-link:hover .image-subtitle {
     color: #007bff;
     /* Cambia el color del texto cuando se pasa sobre el enlace */
 }
 
-.image-link:hover .hover-image {
-    transform: scale(1.1);
-    /* Aplica el zoom a la imagen cuando se pasa por el texto */
-}
 
 @media (max-width: 768px) {
     .image-grid {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
     }
 
     .image-link {
@@ -62,6 +68,6 @@
 
     .hover-image {
         height: auto;
-        width: 200px;
+        width: 64%;
     }
 }

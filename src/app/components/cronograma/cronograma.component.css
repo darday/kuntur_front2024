@@ -2,12 +2,12 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* Distribuye los días en 7 columnas */
     gap: 5px;
-    background-color: yellow;
+    background-color: rgb(255, 219, 0);
   }
   
   
   mat-tab {
-    background-color: yellow !important;
+    background-color: rgb(255, 219, 0) !important;
     color: black;
     text-align: center;
     font-weight: bold;
