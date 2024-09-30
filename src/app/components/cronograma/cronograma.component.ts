@@ -2,16 +2,22 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatTabsModule } from '@angular/material/tabs';
+import {ChangeDetectionStrategy, signal} from '@angular/core';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-cronograma',
   standalone: true,
-  imports: [MatTabsModule, CommonModule],
+  imports: [MatTabsModule, CommonModule,MatExpansionModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './cronograma.component.html',
   styleUrl: './cronograma.component.css'
 })
 
 export class CronogramaComponent {
+
+  readonly panelOpenState = signal(false);
+
   days = [
     { label: 'VIE 1', content: 'Pronto Tendremos más información' },
     { label: 'SAB 2', content: 'Pronto Tendremos más información' },
