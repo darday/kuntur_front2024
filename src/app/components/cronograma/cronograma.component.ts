@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
 import { CommonModule } from '@angular/common';
 
 import { MatTabsModule } from '@angular/material/tabs';
@@ -19,7 +22,7 @@ export class CronogramaComponent {
   readonly panelOpenState = signal(false);
 
   days = [
-    { label: 'VIE 1', content: 'Pronto Tendremos más información' },
+    { label: 'VIE 11', content: 'Pronto Tendremos más información' },
     { label: 'SAB 2', content: 'Pronto Tendremos más información' },
     { label: 'DOM 3', content: 'Pronto Tendremos más información' },
     { label: 'LUN 4', content: 'Pronto Tendremos más información' },
@@ -53,4 +56,39 @@ export class CronogramaComponent {
 
     // Añade más días con contenido según sea necesario
   ];
+
+  currentImage: string = 'assets/carousel/1.png'; // Imagen por defecto para la ruta '/'
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    // Obtener la URL actual al iniciar el componente
+    const currentUrl = this.router.url;
+    console.log('URL en ngOnInit:', currentUrl); // Esto debería imprimir la URL actual al cargar el componente
+
+    // Aplicar lógica en función de la URL actual
+    this.updateImageBasedOnUrl(currentUrl);
+
+    // Ahora nos suscribimos a los futuros eventos de navegación
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      console.log('NavigationEnd event:', event); // Esto debería imprimirse cuando ocurra una nueva navegación
+      const newUrl = this.router.url;
+      console.log('URL después de la navegación:', newUrl);
+      this.updateImageBasedOnUrl(newUrl);
+    });
+  }
+
+  updateImageBasedOnUrl(url: string) {
+    if (url === '/' || url.startsWith('/home')) {
+      this.currentImage = 'assets/carousel/1.png';
+    } else if (url.startsWith('/seleccion-oficial')) {
+      this.currentImage = 'assets/carousel/2.png';
+    } else if (url.startsWith('/largometraje-ficcion')) {
+      this.currentImage = 'assets/carousel/2.png';
+    }
+  }
+
+
 }

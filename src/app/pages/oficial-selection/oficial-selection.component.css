@@ -1,0 +1,59 @@
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.image-link {
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.hover-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    /* Mantiene la proporción de la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+.hover-image:hover {
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    /* Sombra al pasar el mouse */
+}
+
+.image-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.image-link:hover .image-text {
+    color: #007bff;
+    /* Cambia el color del texto cuando se pasa sobre el enlace */
+}
+
+.image-link:hover .hover-image {
+    transform: scale(1.1);
+    /* Aplica el zoom a la imagen cuando se pasa por el texto */
+}
+
+
+@media (max-width: 768px) {
+    .image-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hover-image {
+        width: 200px;
+        height: 200px;
+    }
+}
