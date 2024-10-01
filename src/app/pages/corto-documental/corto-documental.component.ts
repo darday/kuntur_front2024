@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CronogramaComponent } from '../../components/cronograma/cronograma.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,12 +11,11 @@ import { ButtonsForFilmsComponent } from '../../components/buttons-for-films/but
 import { CronogramaWithoutImgComponent } from '../../components/cronograma-without-img/cronograma-without-img.component';
 import { environment } from '../../environments/environment';
 import { CommonModule } from '@angular/common'; // Para *ngFor y otras directivas comunes
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @Component({
-  selector: 'app-largo-ficcion',
+  selector: 'app-corto-documental',
   standalone: true,
   imports: [
     CronogramaComponent,
@@ -28,15 +27,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CronogramaWithoutImgComponent,
     CommonModule,
     MatProgressSpinnerModule
-
   ],
-  templateUrl: './largo-ficcion.component.html',
-  styleUrl: './largo-ficcion.component.css'
+  templateUrl: './corto-documental.component.html',
+  styleUrl: './corto-documental.component.css'
 })
-export class LargoFiccionComponent {
-
+export class CortoDocumentalComponent {
   // Inicialmente el array de films está vacío
-  films: { id: number, image: string, films_Titulo: string,films_Director:string }[] = [];
+  films: { id: number, image: string, films_Titulo: string, films_Director: string }[] = [];
 
   isLoading = true;  // Variable para rastrear el estado de carga
 
@@ -48,15 +45,15 @@ export class LargoFiccionComponent {
   }
 
   getData() {
-    const url = `${environment.apiUrl}/list_larfic`;
+    const url = `${environment.apiUrl}/list_cortodoc`;
     const apiUrlStorage = `${environment.apiUrlStorage}`;
 
     // Realizamos la solicitud al endpoint
     this.http.get<any[]>(url).subscribe(response => {
       // Mapeamos la respuesta a la estructura necesaria para las films
       this.films = response.map(item => ({
-        id: item.id,  
-        image: `${apiUrlStorage}/${item.films_imagen}`, 
+        id: item.id,
+        image: `${apiUrlStorage}/${item.films_imagen}`,
         films_Titulo: item.film_Titulo,
         films_Director: item.film_Director
       }));
@@ -69,14 +66,4 @@ export class LargoFiccionComponent {
 
     });
   }
-
-  // constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
-
-
-  // navigateToSelectionOficial() {
-  //   this.router.navigate(['/']).then(() => {
-  //     window.scrollTo(0, 0);
-  //   });  // Redirige a la página de detalles con el ID en la URL
-
-  // }
 }

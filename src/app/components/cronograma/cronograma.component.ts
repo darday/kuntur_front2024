@@ -76,9 +76,9 @@ export class CronogramaComponent implements OnInit {
 
   updateImageBasedOnUrl(url: string) {
     if (url === '/' || url.startsWith('/home')) {
-      this.currentImage = 'assets/carousel/1.png';
+      this.currentImage = 'assets/carousel/PORTADA-PRINCIPAL.png';
     } else if (url.startsWith('/seleccion-oficial')) {
-      this.currentImage = 'assets/carousel/2.png';
+      this.currentImage = 'assets/carousel/portada-seleccion-oficial.png';
     } else if (url.startsWith('/largometraje-ficcion')) {
       this.currentImage = 'assets/carousel/2.png';
     }
