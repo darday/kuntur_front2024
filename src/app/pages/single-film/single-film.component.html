@@ -1,0 +1,47 @@
+<div style="padding: 0% 5%;" class="animate__animated animate__fadeInRight">
+    <p style="text-align: right; font-size: 1.5rem;">CRONOGRAMA 2024</p>
+</div>
+
+<app-cronograma-without-img></app-cronograma-without-img>
+
+<div class="news-section" *ngIf="!isLoading"> 
+    <h1 class="news-title"> {{FilmData.film_Titulo}}</h1>
+    <div class="image-container">
+        <img [src]="FilmData.film_imagen ? environment.apiUrlStorage + '/' + FilmData.film_imagen : 'assets/img/ct2.png'"
+            alt="Imagen de la noticia" class="news-image">
+    </div>
+    <div class="news-content">
+        <p style="text-align: justify;"> <b>Ciudad: </b>{{FilmData.film_Ciudad}}/ <b>Año: </b>{{FilmData.film_Anio}} / <b>Duración: </b>{{FilmData.film_Duracion}}</p>
+        <p style="text-align: justify;"> <b>Director: </b>{{FilmData.film_Director}}</p>
+    </div>
+    <div class="news-content">
+        <p style="text-align: justify;"> {{FilmData.film_Descripcion}}</p>
+    </div>
+</div>
+
+<!-- Mostrar el spinner mientras se están cargando los datos -->
+<div class="spinner-container" *ngIf="isLoading">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+
+<div style="text-align: center; padding-top: 0%;padding-bottom: 3%;">
+    <div class="example-button-container">
+     
+        <!-- <a  (click)="goBack()">
+            <button mat-fab extended style="margin: 2% 1%;">
+                <mat-icon>local_movies</mat-icon>
+                PÁGINA ANTERIOR
+            </button>
+        </a>   -->
+        
+        <a href="/seleccion-oficial">
+            <button mat-fab extended style="margin: 2% 1%;">
+                <mat-icon>toc</mat-icon>
+                 VER SELECCIÓN OFICIAL
+            </button>
+        </a>
+
+    </div>
+</div>
+
+<app-suscription></app-suscription>

@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CronogramaComponent } from '../../components/cronograma/cronograma.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,7 @@ import { ButtonsForFilmsComponent } from '../../components/buttons-for-films/but
 import { CronogramaWithoutImgComponent } from '../../components/cronograma-without-img/cronograma-without-img.component';
 import { environment } from '../../environments/environment';
 import { CommonModule } from '@angular/common'; // Para *ngFor y otras directivas comunes
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -36,7 +36,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 export class LargoFiccionComponent {
 
   // Inicialmente el array de films está vacío
-  films: { id: number, image: string, films_Titulo: string,films_Director:string }[] = [];
+  films: { id: number, image: string, films_Titulo: string, films_Director: string }[] = [];
+  environment = environment;
 
   isLoading = true;  // Variable para rastrear el estado de carga
 
@@ -55,8 +56,8 @@ export class LargoFiccionComponent {
     this.http.get<any[]>(url).subscribe(response => {
       // Mapeamos la respuesta a la estructura necesaria para las films
       this.films = response.map(item => ({
-        id: item.id,  
-        image: `${apiUrlStorage}/${item.films_imagen}`, 
+        id: item.id,
+        image: `${apiUrlStorage}/${item.film_imagen}`,
         films_Titulo: item.film_Titulo,
         films_Director: item.film_Director
       }));
@@ -79,4 +80,16 @@ export class LargoFiccionComponent {
   //   });  // Redirige a la página de detalles con el ID en la URL
 
   // }
+
+  navigateToFilm(cardId: number) {
+    console.log("Prueba"+cardId);
+    if (cardId) {
+      this.router.navigate(['/single-film', cardId]).then(() => {
+        window.scrollTo(0, 0);
+      });  // Redirige a la página de detalles con el ID en la URL
+    } else {
+      console.error('El ID de la tarjeta es inválido:', cardId);
+    }
+  }
+
 }

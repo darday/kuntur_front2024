@@ -16,6 +16,7 @@
     /* Asegura que el texto sea visible */
     width: 300px;
     /* Establece un ancho fijo para los cuadros */
+    cursor: pointer;
 }
 
 .hover-image {

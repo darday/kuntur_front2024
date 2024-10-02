@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CronogramaComponent } from '../../components/cronograma/cronograma.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,7 @@ import { ButtonsForFilmsComponent } from '../../components/buttons-for-films/but
 import { CronogramaWithoutImgComponent } from '../../components/cronograma-without-img/cronograma-without-img.component';
 import { environment } from '../../environments/environment';
 import { CommonModule } from '@angular/common'; // Para *ngFor y otras directivas comunes
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-corto-ficcion',
@@ -31,39 +31,49 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   styleUrl: './corto-ficcion.component.css'
 })
 export class CortoFiccionComponent {
-// Inicialmente el array de films está vacío
-films: { id: number, image: string, films_Titulo: string,films_Director:string }[] = [];
+  // Inicialmente el array de films está vacío
+  films: { id: number, image: string, films_Titulo: string, films_Director: string }[] = [];
 
-isLoading = true;  // Variable para rastrear el estado de carga
+  isLoading = true;  // Variable para rastrear el estado de carga
 
-constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-// Llamamos a getData() cuando se inicializa el componente
-ngOnInit() {
-  this.getData();
-}
+  // Llamamos a getData() cuando se inicializa el componente
+  ngOnInit() {
+    this.getData();
+  }
 
-getData() {
-  const url = `${environment.apiUrl}/list_cortofic`;
-  const apiUrlStorage = `${environment.apiUrlStorage}`;
+  getData() {
+    const url = `${environment.apiUrl}/list_cortofic`;
+    const apiUrlStorage = `${environment.apiUrlStorage}`;
 
-  // Realizamos la solicitud al endpoint
-  this.http.get<any[]>(url).subscribe(response => {
-    // Mapeamos la respuesta a la estructura necesaria para las films
-    this.films = response.map(item => ({
-      id: item.id,  
-      image: `${apiUrlStorage}/${item.films_imagen}`, 
-      films_Titulo: item.film_Titulo,
-      films_Director: item.film_Director
-    }));
-    this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
+    // Realizamos la solicitud al endpoint
+    this.http.get<any[]>(url).subscribe(response => {
+      // Mapeamos la respuesta a la estructura necesaria para las films
+      this.films = response.map(item => ({
+        id: item.id,
+        image: `${apiUrlStorage}/${item.film_imagen}`,
+        films_Titulo: item.film_Titulo,
+        films_Director: item.film_Director
+      }));
+      this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
 
-    console.log(this.films); // Para verificar la estructura de las tarjetas
-  }, error => {
-    console.error('Error:', error);
-    this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
+      console.log(this.films); // Para verificar la estructura de las tarjetas
+    }, error => {
+      console.error('Error:', error);
+      this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
 
-  });
-}
+    });
+  }
+
+  navigateToFilm(cardId: number) {
+    if (cardId) {
+      this.router.navigate(['/single-film', cardId]).then(() => {
+        window.scrollTo(0, 0);
+      });  // Redirige a la página de detalles con el ID en la URL
+    } else {
+      console.error('El ID de la tarjeta es inválido:', cardId);
+    }
+  }
 
 }

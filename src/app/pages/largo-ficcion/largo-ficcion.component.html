@@ -8,8 +8,11 @@
 
 <div class="image-grid ">
     <!-- Primer cuadro de imagen (Chuzalongo) -->
-        <a href="/chuzalongo" class="image-link " *ngFor="let film of films">
-            <img src="assets/img/ct2.png" alt="Chuzalongo" class="hover-image animate__animated animate__fadeIn">
+
+        <a class="image-link " *ngFor="let film of films" (click)="navigateToFilm(film.id)">
+            <!-- <img src="assets/img/ct2.png"  alt="Chuzalongo" class="hover-image animate__animated animate__fadeIn"> -->
+            <img [src]="film.image ?  film.image : 'assets/img/ct2.png'"
+            alt="Imagen de la noticia" class="hover-image animate__animated animate__fadeIn">
             <p class="image-title">{{film.films_Titulo}}</p>
             <p class="image-subtitle">{{film.films_Director}}</p>
         </a>

@@ -48,12 +48,12 @@
 
 @media (max-width: 768px) {
     .image-grid {
-        flex-direction: column;
-        gap: 20px;
+        /* flex-direction: column; */
+        gap: 5px;
     }
 
     .hover-image {
-        width: 200px;
-        height: 200px;
+        width: 90%;
+        height: auto;
     }
 }

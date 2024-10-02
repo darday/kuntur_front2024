@@ -52,7 +52,7 @@ export class CortoUnivDocumentalComponent {
       // Mapeamos la respuesta a la estructura necesaria para las films
       this.films = response.map(item => ({
         id: item.id,
-        image: `${apiUrlStorage}/${item.films_imagen}`,
+        image: `${apiUrlStorage}/${item.film_imagen}`,
         films_Titulo: item.film_Titulo,
         films_Director: item.film_Director
       }));
@@ -64,5 +64,14 @@ export class CortoUnivDocumentalComponent {
       this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
 
     });
+  }
+  navigateToFilm(cardId: number) {
+    if (cardId) {
+      this.router.navigate(['/single-film', cardId]).then(() => {
+        window.scrollTo(0, 0);
+      });  // Redirige a la página de detalles con el ID en la URL
+    } else {
+      console.error('El ID de la tarjeta es inválido:', cardId);
+    }
   }
 }

@@ -72,16 +72,28 @@ export class CronogramaComponent implements OnInit {
       console.log('URL después de la navegación:', newUrl);
       this.updateImageBasedOnUrl(newUrl);
     });
+
+    window.addEventListener('resize', () => {
+      this.updateImageBasedOnUrl(this.router.url); // Volvemos a llamar la función en cada redimensionamiento
+    });
   }
 
   updateImageBasedOnUrl(url: string) {
+    const isSmallScreen = window.innerWidth < 768; // Pantallas menores a 768px son consideradas pequeñas
+    console.log(isSmallScreen)
     if (url === '/' || url.startsWith('/home')) {
-      this.currentImage = 'assets/carousel/PORTADA-PRINCIPAL.png';
+      if (isSmallScreen) {
+        this.currentImage = 'assets/carousel/celu/PORTADA-PRINCIPAL-CELU.png';
+      } else {
+        this.currentImage = 'assets/carousel/PORTADA-PRINCIPAL.png';
+      }
     } else if (url.startsWith('/seleccion-oficial')) {
-      this.currentImage = 'assets/carousel/portada-seleccion-oficial.png';
-    } else if (url.startsWith('/largometraje-ficcion')) {
-      this.currentImage = 'assets/carousel/2.png';
-    }
+      if (isSmallScreen) {
+        this.currentImage = 'assets/carousel/celu/portada-seleccion-oficial-celu.png';
+      } else {
+        this.currentImage = 'assets/carousel/portada-seleccion-oficial.png';
+      }
+    } 
   }
 
 

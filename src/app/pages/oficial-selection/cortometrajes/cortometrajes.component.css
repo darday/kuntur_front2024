@@ -50,18 +50,19 @@
 
 @media (max-width: 768px) {
     .image-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Distribuye el espacio entre imágenes */
+        gap: 5px; /* Mantén un espacio entre las imágenes */
     }
 
     .image-link {
-        width: 100%;
-        max-width: 300px;
+        width: 49%; /* Ajusta el ancho para que entren dos imágenes por fila */
+        max-width: 300px; /* Controla el tamaño máximo */
     }
 
     .hover-image {
         height: auto;
-        width: 200px;
+        width: 90%; /* Asegura que la imagen ocupe todo el contenedor */
     }
 }
