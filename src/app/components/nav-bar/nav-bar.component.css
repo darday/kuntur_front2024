@@ -53,6 +53,17 @@
   display: none;
 }
 
+.menu-options a.active, .dropdown-menu a.active {
+  color: #007bff;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
+
+.menu-options a.active:hover, .dropdown-menu a.active:hover {
+  background-color: transparent; /* Para que no cambie de color al pasar el ratón si está activo */
+}
+
+
 /* Estilos para móviles */
 @media (max-width: 849px) {
   .nav-bar {
