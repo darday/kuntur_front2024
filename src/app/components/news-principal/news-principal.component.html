@@ -6,7 +6,7 @@
                 <mat-card-title><p style="text-align: center;">INICIO DEL FESTIVAL KUNTURÑAWI</p></mat-card-title>
                 <mat-card-subtitle>INICIO DEL FESTIVAL KUNTURÑAWI</mat-card-subtitle>
             </mat-card-header> -->
-            <img mat-card-image [src]="card.image" alt="Imagen de la card">
+            <img mat-card-image [src]="card.image" alt="Imagen de la card" (click)="navigateToDetail(card.id)" style="cursor: pointer;">
             <mat-card-content>
                 <!-- Limitar contenido a 250 caracteres -->
                 <p style="text-align: justify; padding-top: 3%;">{{ card.content | slice:0:90 }}{{ card.content.length > 250 ? '...' : '' }}</p>

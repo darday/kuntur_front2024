@@ -2,10 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2% 2%;
-  height: 20%;
+  padding: 3.5% 2%;
+  height: 70px; /* Altura fija para el navbar */
   background-color: #fff;
   color: #333;
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+  width: 100%;
 }
 
 .logo-container {
@@ -63,9 +70,24 @@
   background-color: transparent; /* Para que no cambie de color al pasar el ratón si está activo */
 }
 
+.social-media-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-media-icons a {
+  color: #333;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.social-media-icons a:hover {
+  color: #007bff;
+}
+
 
 /* Estilos para móviles */
-@media (max-width: 849px) {
+@media (max-width: 960px) {
   .nav-bar {
     display: flex;
     justify-content: space-between;

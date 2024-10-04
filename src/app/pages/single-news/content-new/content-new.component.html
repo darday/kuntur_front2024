@@ -18,6 +18,15 @@
         <p style="text-align: justify;">{{ newsData.Not_Descripcion }}</p>
     </div>
 
+    <!-- Contenedor para el video de YouTube -->
+    <div class="video-container" *ngIf="showVideo">
+        <iframe width="560" height="315" [src]="videoUrl" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+
     <div style="text-align: center; padding-top: 3%;">
         <div class="example-button-container">
             <button mat-fab extended (click)="navigateToDetail()">

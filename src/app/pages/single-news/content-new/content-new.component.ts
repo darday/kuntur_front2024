@@ -10,6 +10,7 @@ import { Router } from '@angular/router';  // Importa el Router para manejar la 
 
 
 import { environment } from '../../../environments/environment';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-content-new',
@@ -23,10 +24,13 @@ export class ContentNewComponent {
   newsData: any;
   environment = environment;
   isLoading = true;  // Variable para rastrear el estado de carga
+  videoUrl: SafeResourceUrl | undefined;  // Variable para almacenar la URL segura del video
+  showVideo = false
 
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
+
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -46,12 +50,24 @@ export class ContentNewComponent {
       (data) => {
         this.newsData = data;
         this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
-        console.log('Datos recibidos***:', this.newsData[0]);
+        if (this.newsData.Not_ImgDesc) {
+          this.videoUrl = this.getSafeUrl(`https://www.youtube.com/embed/${this.newsData.Not_ImgDesc}`);
+        }
+        if(this.newsData.Not_Estado == 'Si'){
+          this.showVideo = true
+        }else{
+          this.showVideo = false
+        }
+        console.log('Datos recibidos:', this.newsData);
       },
       (error) => {
         console.error('Error al obtener los datos:', error);
       }
     );
+  }
+
+  getSafeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   navigateToDetail() {
