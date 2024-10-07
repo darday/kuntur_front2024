@@ -1,59 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,signal } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { HttpClientModule, HttpClient } from '@angular/common/http'; // Importa HttpClientModule
 
 import { CommonModule } from '@angular/common';
 
 import { MatTabsModule } from '@angular/material/tabs';
+import { environment } from '../../environments/environment';
+
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-cronograma',
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed,void', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
   standalone: true,
-  imports: [MatTabsModule, CommonModule],
+  imports: [MatTabsModule, CommonModule,MatButtonModule,MatIconModule,MatTableModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule
+  ],
   templateUrl: './cronograma.component.html',
   styleUrl: './cronograma.component.css'
 })
 
 export class CronogramaComponent implements OnInit {
-  days = [
-    { label: 'VIE 11', content: 'Pronto Tendremos más información' },
-    { label: 'SAB 2', content: 'Pronto Tendremos más información' },
-    { label: 'DOM 3', content: 'Pronto Tendremos más información' },
-    { label: 'LUN 4', content: 'Pronto Tendremos más información' },
-    { label: 'MAR 5', content: 'Pronto Tendremos más información' },
-    { label: 'MIE 6', content: 'Pronto Tendremos más información' },
-    { label: 'JUE 7', content: 'Pronto Tendremos más información' },
-    { label: 'VIE 8', content: 'Pronto Tendremos más información' },
-    { label: 'SAB 9', content: 'Pronto Tendremos más información' },
-    { label: 'DOM 10', content: 'Pronto Tendremos más información' },
-    { label: 'LUN 11', content: 'Pronto Tendremos más información' },
-    { label: 'MAR 12', content: 'Pronto Tendremos más información' },
-    { label: 'MIE 13', content: 'Pronto Tendremos más información' },
-    { label: 'JUE 14', content: 'Pronto Tendremos más información' },
-    { label: 'VIE 15', content: 'Pronto Tendremos más información' },
-    { label: 'SAB 16', content: 'Pronto Tendremos más información' },
-    { label: 'DOM 17', content: 'Pronto Tendremos más información' },
-    { label: 'LUN 18', content: 'Pronto Tendremos más información' },
-    { label: 'MAR 19', content: 'Pronto Tendremos más información' },
-    { label: 'MIE 20', content: 'Pronto Tendremos más información' },
-    { label: 'JUE 21', content: 'Pronto Tendremos más información' },
-    { label: 'VIE 22', content: 'Pronto Tendremos más información' },
-    { label: 'SAB 23', content: 'Pronto Tendremos más información' },
-    { label: 'DOM 24', content: 'Pronto Tendremos más información' },
-    { label: 'LUN 25', content: 'Pronto Tendremos más información' },
-    { label: 'MAR 26', content: 'Pronto Tendremos más información' },
-    { label: 'MIE 27', content: 'Pronto Tendremos más información' },
-    { label: 'JUE 28', content: 'Pronto Tendremos más información' },
-    { label: 'VIE 29', content: 'Pronto Tendremos más información' },
-    { label: 'SAB 30', content: 'Pronto Tendremos más información' },
+
+  constructor(private http: HttpClient, private router: Router) { }
+  isLoading = true;  // Variable para rastrear el estado de carga
+
+  dates: { id: number, fecha: string }[] = [];  // Inicializado con un array vacío
+  activities: { 
+    hora: string, 
+    descripcion: string,
+    provincia: string,
+    lugar:string 
+  
+  }[] = [];  // Inicializado con un array vacío
+  readonly panelOpenState = signal(false);
 
 
-    // Añade más días con contenido según sea necesario
-  ];
-
-  currentImage: string = 'assets/carousel/1.png'; // Imagen por defecto para la ruta '/'
-
-  constructor(private router: Router) { }
 
   ngOnInit() {
     // Obtener la URL actual al iniciar el componente
@@ -76,24 +72,80 @@ export class CronogramaComponent implements OnInit {
     window.addEventListener('resize', () => {
       this.updateImageBasedOnUrl(this.router.url); // Volvemos a llamar la función en cada redimensionamiento
     });
+
+    this.getData();
+
   }
 
+
+  getData() {
+    const url = `${environment.apiUrl}/listdate`;
+    const apiUrlStorage = `${environment.apiUrlStorage}`;
+
+    // Realizamos la solicitud al endpoint
+    this.http.get<any[]>(url).subscribe(response => {
+      // console.log(response)
+      // Mapeamos la respuesta a la estructura necesaria para las dates
+      this.dates = response.map(item => ({
+        id: item.id,
+        fecha: item.descripcion || 'Fecha no disponible'
+      }));
+      this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
+
+      console.log(this.dates); // Para verificar la estructura de las tarjetas
+    }, error => {
+      console.error('Error:', error);
+      this.isLoading = false; // Desactivar el estado de carga cuando los datos estén disponibles
+
+    });
+  }
+
+  ListAcivities(id: number | any): void {
+    console.log("Clic en la fecha con ID:", id);
+    const url = `${environment.apiUrl}/list_activity/${id}`;  // Ajusta la URL según tu API
+
+    // Realizar la solicitud HTTP para obtener las actividades
+    this.http.get<any[]>(url).subscribe(
+      (response) => {
+        this.activities = response;  // Suponiendo que la API devuelve una lista de actividades
+        this.isLoading = false; 
+        console.log('Actividades obtenidas:', this.activities);
+      },
+      (error) => {
+        console.error('Error al obtener las actividades:', error);
+      }
+    );
+  }
+
+  onTabChange(event: any): void {
+    this.isLoading = true; 
+
+    const selectedIndex = event.index;
+    if (selectedIndex > 0) {  // Evitar la primera pestaña si no es dinámica
+      const selectedDate = this.dates[selectedIndex - 1]; // Restamos 1 si la primera pestaña es estática
+      if (selectedDate) {
+        this.ListAcivities(selectedDate.id);
+      }
+    }
+  }
+
+  currentImage: string = 'assets/carousel/1.png'; // Imagen por defecto para la ruta '/'
+
+
   updateImageBasedOnUrl(url: string) {
-    const isSmallScreen = window.innerWidth < 768; // Pantallas menores a 768px son consideradas pequeñas
-    console.log(isSmallScreen)
+    const isSmallScreen = window.innerWidth < 768;
     if (url === '/' || url.startsWith('/home')) {
-      if (isSmallScreen) {
-        this.currentImage = 'assets/carousel/celu/PORTADA-PRINCIPAL-CELU.png';
-      } else {
-        this.currentImage = 'assets/carousel/PORTADA-PRINCIPAL.png';
-      }
+      this.currentImage = isSmallScreen
+        ? 'assets/carousel/celu/PORTADA-PRINCIPAL-CELU.png'
+        : 'assets/carousel/PORTADA-PRINCIPAL.png';
     } else if (url.startsWith('/seleccion-oficial')) {
-      if (isSmallScreen) {
-        this.currentImage = 'assets/carousel/celu/portada-seleccion-oficial-celu.png';
-      } else {
-        this.currentImage = 'assets/carousel/portada-seleccion-oficial.png';
-      }
-    } 
+      this.currentImage = isSmallScreen
+        ? 'assets/carousel/celu/portada-seleccion-oficial-celu.png'
+        : 'assets/carousel/portada-seleccion-oficial.png';
+    } else {
+      // Asegúrate de que siempre haya un valor para currentImage
+      this.currentImage = 'assets/carousel/default-image.png';  // Valor por defecto
+    }
   }
 
 

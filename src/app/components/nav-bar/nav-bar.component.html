@@ -2,23 +2,24 @@
   <!-- Logo y Título -->
   <div class="logo-container">
     <a href="/"><img src="assets/img/logos/logo.png" alt="Festival de Cine Ecuatoriano" class="festival-logo"></a>
-    <div class="festival-title"></div>
-    <div class="social-media-icons">
-      <a href="https://www.facebook.com/KunturnawiCine" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/kunturnawi.cine/" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://x.com/kunturnawicine?lang=es" target="_blank">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-      <a href="https://www.youtube.com/@kunturnawiecuatoriano1375" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/festival-cine-ecuatoriano-kunturñawi-5565331a8/" target="_blank">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
+    <div class="festival-title">
+      <div class="social-media-icons">
+        <a href="https://www.facebook.com/KunturnawiCine" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/kunturnawi.cine/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/kunturnawicine?lang=es" target="_blank">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/@kunturnawiecuatoriano1375" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/festival-cine-ecuatoriano-kunturñawi-5565331a8/" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -26,7 +27,8 @@
   <div class="menu-options" [class.show]="menuOpen">
     <a mat-button href="/" [ngClass]="{'active': isRouteActive('/') }">INICIO</a>
     <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }">EL FESTIVAL</a>
-    <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN OFICIAL</a>
+    <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
+      OFICIAL</a>
     <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }">KUNTUR LAB</a>
     <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }">GALERÍA</a>
   </div>
@@ -40,8 +42,12 @@
 <!-- Menú desplegable solo para móviles -->
 <div class="dropdown-menu" *ngIf="menuOpen">
   <a mat-button href="/" [ngClass]="{'active': isRouteActive('/') }" (click)="toggleMenu()">INICIO</a>
-  <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }" (click)="toggleMenu()">EL FESTIVAL</a>
-  <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }" (click)="toggleMenu()">SELECCIÓN OFICIAL</a>
-  <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }" (click)="toggleMenu()">KUNTUR LAB</a>
-  <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }" (click)="toggleMenu()">GALERÍA</a>
+  <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }" (click)="toggleMenu()">EL
+    FESTIVAL</a>
+  <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }"
+    (click)="toggleMenu()">SELECCIÓN OFICIAL</a>
+  <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }"
+    (click)="toggleMenu()">KUNTUR LAB</a>
+  <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }"
+    (click)="toggleMenu()">GALERÍA</a>
 </div>

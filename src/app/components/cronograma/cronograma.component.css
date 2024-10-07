@@ -29,4 +29,11 @@
     height: 2px; /* Ajusta el grosor de la línea activa */
     background-color: black; /* Cambia el color si lo deseas */
   }
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* O ajusta según tus necesidades */
+}
   

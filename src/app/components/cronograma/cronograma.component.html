@@ -1,5 +1,7 @@
-<mat-tab-group style="background-color: rgb(255, 219, 0); margin: 0% 3%;" class="animate__animated animate__fadeIn">
-    <!-- Pestaña de Noviembre con imagen -->
+
+
+<mat-tab-group style="background-color: rgb(255, 219, 0); margin: 0% 3%;" class="animate__animated animate__fadeIn"
+               (selectedTabChange)="onTabChange($event)">
     <mat-tab label="NOVIEMBRE">
         <div class="november-content" style="background-color: white;">
             <img [src]="currentImage" width="100%" alt="Imagen dinámica" class="november-image">
@@ -7,9 +9,40 @@
     </mat-tab>
 
     <!-- Pestañas dinámicas para los días -->
-    <mat-tab *ngFor="let day of days" [label]="day.label">
+    <mat-tab *ngFor="let date of dates" [label]="date?.fecha ?? 'Fecha no disponible'">
         <div class="day-content">
-            <p>{{ day.content }}</p>
+            <div class="spinner-container" *ngIf="isLoading">
+                <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+            </div>
+            <div *ngIf="activities && activities.length > 0 && isLoading==false">
+                <!-- <h3>Actividades para la fecha seleccionada:</h3> -->
+             
+
+                <mat-accordion *ngFor="let activity of activities">
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>{{ activity?.hora }}</mat-panel-title>
+                            <mat-panel-description>
+                                {{ activity?.descripcion }}
+                            </mat-panel-description>
+                            <mat-panel-description>
+                                <b>Ciudad:</b> {{ activity?.provincia }}
+
+                            </mat-panel-description>
+                            <mat-panel-description>
+                                <b>Lugar: </b> {{ activity?.lugar }}
+
+                            </mat-panel-description>
+
+                        </mat-expansion-panel-header>
+                       
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div *ngIf="!activities?.length && isLoading==false">
+                <p>No hay actividades para esta fecha.</p>
+            </div>
+            
         </div>
     </mat-tab>
 </mat-tab-group>
