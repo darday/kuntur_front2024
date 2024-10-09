@@ -1,5 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://api.tuapp.com'
+    apiUrl: 'https://admin.festivalkunturnawi.com/api',
+    apiUrlStorage: 'https://admin.festivalkunturnawi.com/storage'
   };
   
