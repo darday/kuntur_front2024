@@ -26,11 +26,22 @@
   <!-- Menú para pantallas grandes -->
   <div class="menu-options" [class.show]="menuOpen">
     <a mat-button href="/" [ngClass]="{'active': isRouteActive('/') }">INICIO</a>
-    <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }">EL FESTIVAL</a>
+
+    <div class="festival-menu-container" (mouseenter)="openSubmenu()" (mouseleave)="closeSubmenu()">
+      <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }">EL FESTIVAL</a>
+
+      <!-- Submenú para pantallas grandes -->
+      <div class="festival-submenu" *ngIf="submenuOpen">
+        <!-- <a mat-button routerLink="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }">JURADO</a>
+        <a mat-button routerLink="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }">EQUIPO</a> -->
+        <a mat-button href="/acerca-del-festival"  [ngClass]="{'active': isRouteActive('/acerca-del-festival') }">ACERCA DEL FESTIVAL</a>
+      </div>
+    </div>
+
     <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
       OFICIAL</a>
-    <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }">KUNTUR LAB</a>
-    <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }">GALERÍA</a>
+    <!-- <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }">KUNTUR LAB</a>
+    <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }">GALERÍA</a> -->
   </div>
 
   <!-- Menú Responsive (Icono) -->
@@ -42,12 +53,23 @@
 <!-- Menú desplegable solo para móviles -->
 <div class="dropdown-menu" *ngIf="menuOpen">
   <a mat-button href="/" [ngClass]="{'active': isRouteActive('/') }" (click)="toggleMenu()">INICIO</a>
-  <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }" (click)="toggleMenu()">EL
-    FESTIVAL</a>
+
+  <!-- Submenú para móviles -->
+  <div (click)="toggleFestivalSubMenu()" class="festival-mobile-menu">
+    <a mat-button>EL FESTIVAL</a>
+    <div *ngIf="festivalSubMenuOpen" class="festival-submenu-mobile">
+      <!-- <a mat-button routerLink="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }"
+        (click)="toggleMenu()">JURADO
+      </a>
+      <a mat-button routerLink="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }"
+        (click)="toggleMenu()">EQUIPO
+      </a> -->
+      <a mat-button routerLink="/acerca-del-festival" [ngClass]="{'active': isRouteActive('/acerca-del-festival') }"
+        (click)="toggleMenu()">ACERCA DEL FESTIVAL
+      </a>
+    </div>
+  </div>
+
   <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }"
     (click)="toggleMenu()">SELECCIÓN OFICIAL</a>
-  <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }"
-    (click)="toggleMenu()">KUNTUR LAB</a>
-  <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }"
-    (click)="toggleMenu()">GALERÍA</a>
 </div>

@@ -15,6 +15,10 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavBarComponent {
   menuOpen = false;
+  submenuOpen = false; // Controla el submenú de "EL FESTIVAL"
+  festivalSubMenuOpen = false; // Controla el submenú en pantallas pequeñas
+
+
 
   activeRoute = '/'; // Ruta inicial marcada por defecto
   constructor(private router: Router) { }
@@ -35,4 +39,18 @@ export class NavBarComponent {
   isRouteActive(route: string): boolean {
     return this.activeRoute === route;
   }
+
+  openSubmenu() {
+    this.submenuOpen = true;
+  }
+
+  closeSubmenu() {
+    this.submenuOpen = false;
+  }
+
+  toggleFestivalSubMenu() {
+    this.festivalSubMenuOpen = !this.festivalSubMenuOpen;
+  }
+
+
 }

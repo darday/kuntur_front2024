@@ -36,4 +36,17 @@
     align-items: center;
     height: 50vh; /* O ajusta según tus necesidades */
 }
+
+.show-on-small {
+  display: none;
+}
   
+/* Oculta los elementos con la clase 'hide-on-small' en pantallas pequeñas */
+@media (max-width: 768px) {
+  .hide-on-small {
+    display: none;
+  }
+  .show-on-small {
+    display: block;
+  }
+}

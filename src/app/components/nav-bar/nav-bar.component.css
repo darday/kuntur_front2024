@@ -85,6 +85,45 @@
   color: #007bff;
 }
 
+/* Menú para pantallas grandes */
+.festival-submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+}
+
+.festival-menu-container:hover .festival-submenu {
+  display: block;
+}
+
+.festival-submenu a {
+  padding: 10px 20px;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Menú para móviles */
+.festival-submenu-mobile {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* align-items: center; */
+}
+
+.festival-mobile-menu {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+
+}
+
+.festival-submenu-mobile a {
+  padding: 10px;
+  text-align: center;
+}
+
 
 /* Estilos para móviles */
 @media (max-width: 960px) {
@@ -142,4 +181,9 @@
     background-color: #f1f1f1;
     color: #007bff;
   }
+
+  .festival-submenu {
+    display: none;
+  }
+
 }

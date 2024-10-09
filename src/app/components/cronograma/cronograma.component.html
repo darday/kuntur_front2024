@@ -1,7 +1,5 @@
-
-
 <mat-tab-group style="background-color: rgb(255, 219, 0); margin: 0% 3%;" class="animate__animated animate__fadeIn"
-               (selectedTabChange)="onTabChange($event)">
+    (selectedTabChange)="onTabChange($event)">
     <mat-tab label="NOVIEMBRE">
         <div class="november-content" style="background-color: white;">
             <img [src]="currentImage" width="100%" alt="Imagen dinámica" class="november-image">
@@ -16,36 +14,43 @@
             </div>
             <div *ngIf="activities && activities.length > 0 && isLoading==false">
                 <!-- <h3>Actividades para la fecha seleccionada:</h3> -->
-             
+
 
                 <mat-accordion *ngFor="let activity of activities">
-                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)" (click)="listFilForActivity(activity.id_activities)">
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>{{ activity?.hora }}</mat-panel-title>
-                            <mat-panel-description>
-                                {{ activity?.descripcion }}
-                            </mat-panel-description>
-                            <mat-panel-description>
+                            <mat-panel-description>{{ activity?.descripcion }}</mat-panel-description>
+
+                            <!-- Agregamos la clase 'hide-on-small' a estos elementos -->
+                            <mat-panel-description class="hide-on-small">
                                 <b>Ciudad:</b> {{ activity?.provincia }}
-
                             </mat-panel-description>
-                            <mat-panel-description>
+
+                            <mat-panel-description class="hide-on-small">
                                 <b>Lugar: </b> {{ activity?.lugar }}
-
                             </mat-panel-description>
-
                         </mat-expansion-panel-header>
-                       
+
+                        <div class="show-on-small" style="padding-bottom: 5%;">
+                            <b>Ciudad:</b> {{ activity?.provincia }}
+                            <b>Lugar: </b> {{ activity?.lugar }}
+                            
+                        </div>
+
+                        <div *ngIf="activity?.films && activity.films.length > 0">
+                            <p>Pronto tendremos más información de las películas</p>
+                        </div>
+
+
                     </mat-expansion-panel>
                 </mat-accordion>
-
-                
-
-            </div>
-            <div *ngIf="!activities?.length && isLoading==false">
-                <p>No hay actividades para esta fecha.</p>
             </div>
             
+            <div *ngIf="!activities?.length && isLoading==false">
+                <p>Pronto tendremos más información.</p>
+            </div>
+
         </div>
     </mat-tab>
 </mat-tab-group>

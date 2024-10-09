@@ -28,7 +28,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   standalone: true,
   imports: [MatTabsModule, CommonModule,MatButtonModule,MatIconModule,MatTableModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    
   ],
   templateUrl: './cronograma.component.html',
   styleUrl: './cronograma.component.css'
@@ -38,6 +39,7 @@ export class CronogramaComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
   isLoading = true;  // Variable para rastrear el estado de carga
+  haveFilm = false;
 
   dates: { id: number, fecha: string }[] = [];  // Inicializado con un array vacío
   activities: { 
@@ -46,6 +48,7 @@ export class CronogramaComponent implements OnInit {
     descripcion: string,
     provincia: string,
     lugar:string 
+    films:[]
   
   }[] = [];  // Inicializado con un array vacío
   readonly panelOpenState = signal(false);
@@ -115,6 +118,8 @@ export class CronogramaComponent implements OnInit {
       },
       (error) => {
         console.error('Error al obtener las actividades:', error);
+        this.haveFilm=false
+
       }
     );
   }
@@ -131,9 +136,6 @@ export class CronogramaComponent implements OnInit {
     }
   }
 
-  listFilForActivity(id:number){
-    console.log("Clic"+id);
-  }
 
   currentImage: string = 'assets/carousel/1.png'; // Imagen por defecto para la ruta '/'
 
@@ -155,4 +157,26 @@ export class CronogramaComponent implements OnInit {
   }
 
 
+  displayedColumns: string[] = [ 'Película', 'Director', 'id'];
+  dataSource = ELEMENT_DATA;
 }
+
+export interface FilmElements {
+  id: number;
+  film_Titulo: string;
+  film_Director: string;
+
+}
+
+const ELEMENT_DATA: FilmElements[] = [
+  {id: 1, film_Titulo: 'Hydrogen', film_Director: 'H'},
+  {id: 2, film_Titulo: 'Helium', film_Director: 'He'},
+  {id: 3, film_Titulo: 'Lithium', film_Director: 'Li'},
+  {id: 4, film_Titulo: 'Beryllium', film_Director: 'Be'},
+  {id: 5, film_Titulo: 'Boron', film_Director: 'B'},
+  {id: 6, film_Titulo: 'Carbon',  film_Director: 'C'},
+  {id: 7, film_Titulo: 'Nitrogen',  film_Director: 'N'},
+  {id: 8, film_Titulo: 'Oxygen',  film_Director: 'O'},
+  {id: 9, film_Titulo: 'Fluorine',  film_Director: 'F'},
+  {id: 10, film_Titulo: 'Neon',  film_Director: 'Ne'},
+];

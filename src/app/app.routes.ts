@@ -11,6 +11,7 @@ import { CortoUnivFiccionComponent } from './pages/corto-univ-ficcion/corto-univ
 import { CortoUnivDocumentalComponent } from './pages/corto-univ-documental/corto-univ-documental.component';
 import { CortoInternacionalComponent } from './pages/corto-internacional/corto-internacional.component';
 import { SingleFilmComponent } from './pages/single-film/single-film.component';
+import { AcercaFestivalComponent } from './pages/acerca-festival/acerca-festival.component';
 
 export const routes: Routes = [
     { path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },  // Página principal
@@ -23,6 +24,8 @@ export const routes: Routes = [
     { path: 'cortometraje-univ-ficcion', component: CortoUnivFiccionComponent },  // Ruta para las noticias individuales con el ID
     { path: 'cortometraje-univ-documental', component: CortoUnivDocumentalComponent },  // Ruta para las noticias individuales con el ID
     { path: 'cortometraje-internacionales', component: CortoInternacionalComponent },  // Ruta para las noticias individuales con el ID
+    
+    { path: 'acerca-del-festival', component: AcercaFestivalComponent },  // Ruta para las noticias individuales con el ID
     
     
     { path: 'single-film/:id', component: SingleFilmComponent },  // Ruta para las noticias individuales con el ID

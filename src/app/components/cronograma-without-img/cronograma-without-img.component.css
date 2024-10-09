@@ -1,32 +1,52 @@
 .month-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); /* Distribuye los días en 7 columnas */
-    gap: 5px;
-    background-color: rgb(255, 219, 0);
-  }
-  
-  
-  mat-tab {
-    background-color: yellow !important;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .day-content {
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Distribuye los días en 7 columnas */
+  gap: 5px;
+  background-color: rgb(255, 219, 0);
+}
 
-  .mat-tab-group.mat-primary .mat-tab-label-active .mat-tab-label-content {
-    border-bottom: 2px solid black; /* Cambia el grosor aquí */
-  }
-  
-  .mat-tab-group .mat-ink-bar {
-    height: 2px; /* Ajusta el grosor de la línea activa */
-    background-color: black; /* Cambia el color si lo deseas */
-  }
-  
+
+mat-tab {
+  background-color: rgb(255, 219, 0) !important;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.day-content {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+.mat-tab-group.mat-primary .mat-tab-label-active .mat-tab-label-content {
+  border-bottom: 2px solid black; /* Cambia el grosor aquí */
+}
+
+.mat-tab-group .mat-ink-bar {
+  height: 2px; /* Ajusta el grosor de la línea activa */
+  background-color: black; /* Cambia el color si lo deseas */
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* O ajusta según tus necesidades */
+}
+
+.show-on-small {
+display: none;
+}
+
+/* Oculta los elementos con la clase 'hide-on-small' en pantallas pequeñas */
+@media (max-width: 768px) {
+.hide-on-small {
+  display: none;
+}
+.show-on-small {
+  display: block;
+}
+}
