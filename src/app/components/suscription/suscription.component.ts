@@ -5,7 +5,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';  // Asegúrate de importar CommonModule
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, NgForm } from '@angular/forms';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({

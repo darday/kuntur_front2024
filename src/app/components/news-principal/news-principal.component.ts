@@ -3,7 +3,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common'; // Para *ngFor y otras directivas comunes
 import { MatButtonModule } from '@angular/material/button';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';  // Importa el Router para manejar la navegación
 

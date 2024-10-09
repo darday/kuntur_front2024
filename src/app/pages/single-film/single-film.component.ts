@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CronogramaWithoutImgComponent } from '../../components/cronograma-without-img/cronograma-without-img.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule, Location } from '@angular/common';

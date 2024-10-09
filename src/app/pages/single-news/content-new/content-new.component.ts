@@ -9,7 +9,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';  // Importa el Router para manejar la navegación
 
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({

@@ -6,7 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http'; // Importa 
 import { CommonModule } from '@angular/common';
 
 import { MatTabsModule } from '@angular/material/tabs';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatButtonModule } from '@angular/material/button';

@@ -9,7 +9,7 @@ import { PatrocinadoresComponent } from '../../components/patrocinadores/patroci
 import { SuscriptionComponent } from '../../components/suscription/suscription.component';
 import { ButtonsForFilmsComponent } from '../../components/buttons-for-films/buttons-for-films.component';
 import { CronogramaWithoutImgComponent } from '../../components/cronograma-without-img/cronograma-without-img.component';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common'; // Para *ngFor y otras directivas comunes
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
