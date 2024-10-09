@@ -19,7 +19,7 @@
              
 
                 <mat-accordion *ngFor="let activity of activities">
-                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)" (click)="listFilForActivity(activity.id_activities)">
                         <mat-expansion-panel-header>
                             <mat-panel-title>{{ activity?.hora }}</mat-panel-title>
                             <mat-panel-description>
@@ -38,6 +38,9 @@
                        
                     </mat-expansion-panel>
                 </mat-accordion>
+
+                
+
             </div>
             <div *ngIf="!activities?.length && isLoading==false">
                 <p>No hay actividades para esta fecha.</p>

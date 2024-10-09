@@ -41,6 +41,7 @@ export class CronogramaComponent implements OnInit {
 
   dates: { id: number, fecha: string }[] = [];  // Inicializado con un array vacío
   activities: { 
+    id_activities:number | any,
     hora: string, 
     descripcion: string,
     provincia: string,
@@ -54,7 +55,7 @@ export class CronogramaComponent implements OnInit {
   ngOnInit() {
     // Obtener la URL actual al iniciar el componente
     const currentUrl = this.router.url;
-    console.log('URL en ngOnInit:', currentUrl); // Esto debería imprimir la URL actual al cargar el componente
+    // console.log('URL en ngOnInit:', currentUrl); // Esto debería imprimir la URL actual al cargar el componente
 
     // Aplicar lógica en función de la URL actual
     this.updateImageBasedOnUrl(currentUrl);
@@ -63,9 +64,9 @@ export class CronogramaComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
-      console.log('NavigationEnd event:', event); // Esto debería imprimirse cuando ocurra una nueva navegación
+      // console.log('NavigationEnd event:', event); // Esto debería imprimirse cuando ocurra una nueva navegación
       const newUrl = this.router.url;
-      console.log('URL después de la navegación:', newUrl);
+      // console.log('URL después de la navegación:', newUrl);
       this.updateImageBasedOnUrl(newUrl);
     });
 
@@ -109,7 +110,8 @@ export class CronogramaComponent implements OnInit {
       (response) => {
         this.activities = response;  // Suponiendo que la API devuelve una lista de actividades
         this.isLoading = false; 
-        console.log('Actividades obtenidas:', this.activities);
+        console.log("Clic en la fecha con ID:", this.activities);
+
       },
       (error) => {
         console.error('Error al obtener las actividades:', error);
@@ -127,6 +129,10 @@ export class CronogramaComponent implements OnInit {
         this.ListAcivities(selectedDate.id);
       }
     }
+  }
+
+  listFilForActivity(id:number){
+    console.log("Clic"+id);
   }
 
   currentImage: string = 'assets/carousel/1.png'; // Imagen por defecto para la ruta '/'
