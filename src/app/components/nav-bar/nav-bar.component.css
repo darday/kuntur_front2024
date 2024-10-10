@@ -155,19 +155,21 @@
     display: block; /* Muestra el icono de menú en pantallas pequeñas */
   }
   
-  .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 10%;
-    right: 0;
-    background-color: white;
-    width: 100%;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 1000; /* Valor alto para que esté sobre las Tabs */
-
-  }
+/* Cambiar la posición del menú desplegable */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Cambiado a fixed */
+  top: 0; /* Asegura que esté en la parte superior de la vista, no de la página */
+  right: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+  /* Opcional: Si prefieres que comience debajo del navbar, ajusta el valor de top */
+  top: 70px; /* Ajusta esto según la altura de tu navbar */
+}
   
   .dropdown-menu a {
     padding: 10px;
