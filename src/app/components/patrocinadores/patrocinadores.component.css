@@ -1,5 +1,5 @@
 .sponsors-section {
-    background-color: #d3d3d3; /* Color de fondo gris */
+    background-color: #3c384d; /* Color de fondo gris */
     text-align: center;
     padding: 3% 3%;
     padding-bottom: 5%;
@@ -9,7 +9,7 @@
     font-size: 36px;
     font-weight: bolder;
     margin-bottom: 2%;
-    color: #333;
+    color: white;
     letter-spacing: 0.1cap;
     padding-top: 3%;
   }
@@ -19,15 +19,15 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5%;
+    gap: 1%;
   }
   
   .sponsor-logos img {
-    max-height: 11vh; /* Ajusta la altura máxima de los logos */
+    max-height: 12vh; /* Ajusta la altura máxima de los logos */
     object-fit: contain;
     padding: 1%;
-    padding-top: 4%;
-    background-color: rgba(255, 255, 255, 0);
+    padding-top: 1%;
+    background-color: #3c384d;
     /* border-radius: 8px; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
@@ -45,7 +45,17 @@
   }
 
   .sponsor-logos img {
-      max-height: 9vh; /* Reducir un poco el tamaño de los logos */
+      max-height: 5vh; /* Reducir un poco el tamaño de los logos */
+  }
+
+  .peque{
+    max-height: 4vh !important
+  }
+  .peque2{
+    max-height: 6vh !important
+  }
+  .peque3{
+    max-height: 10vh !important
   }
 }
 
@@ -56,11 +66,30 @@
   }
 
   .sponsor-logos {
-      flex-direction: column; /* Los logos se mostrarán en columnas */
-      gap: 15%; /* Mayor espacio entre los logos para pantallas pequeñas */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1%;
+  }
+  
+  .sponsor-logos img {
+    max-height: 8vh; /* Ajusta la altura máxima de los logos */
+    object-fit: contain;
+    padding: 1%;
+    padding-top: 1%;
+    background-color: #3c384d;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
 
-  .sponsor-logos img {
-      max-height: 7vh; /* Reducir el tamaño de los logos para pantallas muy pequeñas */
+  .peque{
+    max-height: 4vh !important
+  }
+  .peque2{
+    max-height: 6vh !important
+  }
+  .peque3{
+    max-height: 10vh !important
   }
 }
