@@ -4,11 +4,18 @@ import { NewsTittleComponent } from '../../../components/news-tittle/news-tittle
 import { NewsPrincipalComponent } from '../../../components/news-principal/news-principal.component';
 import { PatrocinadoresComponent } from '../../../components/patrocinadores/patrocinadores.component';
 import { SuscriptionComponent } from '../../../components/suscription/suscription.component';
+import { ButtonsForDownloadComponent } from '../../../components/buttons-for-download/buttons-for-download.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CronogramaComponent, NewsTittleComponent, NewsPrincipalComponent,PatrocinadoresComponent,SuscriptionComponent],
+  imports: [CronogramaComponent, 
+    NewsTittleComponent, 
+    NewsPrincipalComponent,
+    PatrocinadoresComponent,
+    SuscriptionComponent,
+    ButtonsForDownloadComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

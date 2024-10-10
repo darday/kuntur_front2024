@@ -1,0 +1,50 @@
+/* Estilos generales para los botones */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    /* Espacio entre los botones */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Permite que los botones bajen a la siguiente fila si es necesario */
+    gap: 15px 0px;
+    /* Espacio entre los botones */
+    margin: 20px 0;
+    padding: 0% 5%;
+}
+
+button {
+    width: 250px;
+    /* Ancho de cada botón */
+    font-size: 16px;
+}
+
+.news-section {
+    text-align: center;
+    padding-bottom: 1%;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    /* padding: 10px 20px; */
+}
+
+.news-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    padding: 0 3%;
+}
+
+
+/* Responsivo: En pantallas pequeñas, los botones se apilan en una columna */
+@media screen and (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        /* Apila los botones en una columna */
+        padding: 0% 10%;
+    }
+
+    button {
+        width: 100%;
+        /* Los botones ocupan todo el ancho disponible */
+    }
+}
