@@ -1,5 +1,5 @@
 <mat-tab-group style="background-color: rgb(255, 219, 0); margin: 0% 3%;" class="animate__animated animate__fadeIn"
-    (selectedTabChange)="onTabChange($event)">  <mat-tab label="NOVIEMBRE">
+  (selectedTabChange)="onTabChange($event)"> <mat-tab label="NOVIEMBRE">
     <div class="month-grid">
       <!-- Ciclo sobre los días -->
       <!-- Pestañas dinámicas para los días -->
@@ -35,7 +35,45 @@
                 </div>
 
                 <div *ngIf="activity?.films && activity.films.length > 0">
-                  <p>Pronto tendremos más información de las películas</p>
+                  <table mat-table [dataSource]="activity.films" class="mat-elevation-z8">
+                    <!-- Título de la película -->
+                    <ng-container matColumnDef="film_Titulo">
+                      <th mat-header-cell *matHeaderCellDef> Película </th>
+                      <td mat-cell *matCellDef="let film"> {{film.film_Titulo}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="film_Director">
+                      <th mat-header-cell *matHeaderCellDef> Director </th>
+                      <td mat-cell *matCellDef="let film"> {{film.film_Director}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="film_Duracion" class="hide-on-small">
+                      <th mat-header-cell *matHeaderCellDef class="hide-on-small"> Duración </th>
+                      <td mat-cell *matCellDef="let film" class="hide-on-small"> {{film.film_Duracion}}
+                      </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef> Link </th>
+                      <td mat-cell *matCellDef="let film"> 
+                        <a href="http://localhost:4200/single-film/{{film.id}}" target="_blank">
+                            <button mat-fab extended  class="hide-on-small" >
+                                <i class="fa-regular fa-eye"></i> Ver Film
+                            </button>
+                            <button mat-fab extended class="show-on-small" >
+                                Film
+                            </button>
+                        </a>
+
+                    </td>
+                    </ng-container>
+
+
+                    <!-- Fila de encabezado -->
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <!-- Fila de contenido -->
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
                 </div>
 
 

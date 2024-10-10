@@ -29,6 +29,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   imports: [MatTabsModule, CommonModule,MatButtonModule,MatIconModule,MatTableModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+     
     
   ],
   templateUrl: './cronograma.component.html',
@@ -48,11 +49,12 @@ export class CronogramaComponent implements OnInit {
     descripcion: string,
     provincia: string,
     lugar:string 
-    films:[]
+    films: { id: number, film_Titulo: string, film_Director: string, film_Duracion: string }[]
   
   }[] = [];  // Inicializado con un array vacío
   readonly panelOpenState = signal(false);
 
+  displayedColumns: string[] = ['film_Titulo', 'film_Director', 'film_Duracion', 'id']; // Definimos las columnas de la tabla
 
 
   ngOnInit() {
@@ -111,7 +113,10 @@ export class CronogramaComponent implements OnInit {
     // Realizar la solicitud HTTP para obtener las actividades
     this.http.get<any[]>(url).subscribe(
       (response) => {
-        this.activities = response;  // Suponiendo que la API devuelve una lista de actividades
+        this.activities = response.map(activity => ({
+          ...activity,
+          films: activity.films || []  // Asegurarnos de que las películas sean un array
+        }));
         this.isLoading = false; 
         console.log("Clic en la fecha con ID:", this.activities);
 
@@ -157,7 +162,6 @@ export class CronogramaComponent implements OnInit {
   }
 
 
-  displayedColumns: string[] = [ 'Película', 'Director', 'id'];
   dataSource = ELEMENT_DATA;
 }
 
