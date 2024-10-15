@@ -6,9 +6,213 @@
 
 <app-cronograma-without-img></app-cronograma-without-img>
 
-<h1
-    style="text-align: center; font-size: 2.5rem; font-weight:900; color: #333; padding-top: 3%; padding-bottom: 3%;line-height: 1; ">
-    JURADO CALIFICADOR
+<h2
+    style="text-align: center; font-size: 1.85rem; font-weight:900; color: #333; padding-top: 3%; padding-bottom: 1%;line-height: 1; ">
+    JURADO CORTOMETRAJES (Ficción y documental)
+</h2>
 
-    <p>Pronto tendremos más información de nuestro Jurado Calificador</p>
-</h1>
+<div class="card-grid">
+    <!-- Primera tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/anahi-hoeneisen.webp" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('Anahí Hoeneisen',  'Cuenta con más de 15 años de experiencia en el cine y la publicidad en Ecuador, donde ha trabajado como directora, productora, guionista, directora de casting, actriz y docente. Co-escribió y co-dirigió los largometrajes &quot;Esas No Son Penas&quot; (2006) y &quot;Ochentaisiete&quot; (2014). Ha actuado en varios cortometrajes y largometrajes, destacando &quot;Lo Invisible&quot; (2021), que se estrenó en el Festival Internacional de Cine de Toronto y le valió el Premio Colibrí a Mejor Actriz en 2022. Actualmente, colabora con LaMaquinita, productora de cine independiente.')">
+        <h3>Anahí Hoeneisen</h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        {{'Cuenta con más de 15 años de experiencia en el cine y la publicidad en Ecuador, donde ha trabajado como
+        directora, productora, guionista, directora de casting, actriz y docente. Co-escribió y co-dirigió los
+        largometrajes "Esas No Son Penas" (2006) y "Ochentaisiete" (2014). Ha actuado en varios cortometrajes y
+        largometrajes, destacando "Lo Invisible" (2021), que se estrenó en el Festival Internacional de Cine de Toronto
+        y le valió el Premio Colibrí a Mejor Actriz en 2022. Actualmente, colabora con LaMaquinita, productora de cine
+        independiente.' | slice:0:150}}
+
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('Anahí Hoeneisen',  'Cuenta con más de 15 años de experiencia en el cine y la publicidad en Ecuador, donde ha trabajado como directora, productora, guionista, directora de casting, actriz y docente. Co-escribió y co-dirigió los largometrajes &quot;Esas No Son Penas&quot; (2006) y &quot;Ochentaisiete&quot; (2014). Ha actuado en varios cortometrajes y largometrajes, destacando &quot;Lo Invisible&quot; (2021), que se estrenó en el Festival Internacional de Cine de Toronto y le valió el Premio Colibrí a Mejor Actriz en 2022. Actualmente, colabora con LaMaquinita, productora de cine independiente.')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Segunda tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/denis_daniilidis_130618.jpg" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('Denis Daniilidis', 'Denis Deniilidis, Jefe de Política y Prensa de la Unión Europea en Ecuador, es experto en relaciones internacionales con estudios en Atenas, Lovaina y Madrid. Su amplia experiencia abarca las delegaciones de la UE en diversas ubicaciones, y destacada por la creación de eventos culturales y promoción de derechos humanos. Cinéfilo apasionado, ha impulsado festivales de cine en varios países.')">
+        <h3>Denis Daniilidis</h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        <p>{{ 'Denis Deniilidis, Jefe de Política y Prensa de la Unión Europea en Ecuador, es experto en relaciones
+            internacionales con estudios en Atenas, Lovaina y Madrid. Su amplia experiencia abarca las delegaciones de
+            la UE en diversas ubicaciones, y destacada por la creación de eventos culturales y promoción de derechos
+            humanos. Cinéfilo apasionado, ha impulsado festivales de cine en varios países.' | slice:0:150 }}...</p>
+
+
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('Denis Daniilidis', 'Denis Deniilidis, Jefe de Política y Prensa de la Unión Europea en Ecuador, es experto en relaciones internacionales con estudios en Atenas, Lovaina y Madrid. Su amplia experiencia abarca las delegaciones de la UE en diversas ubicaciones, y destacada por la creación de eventos culturales y promoción de derechos humanos. Cinéfilo apasionado, ha impulsado festivales de cine en varios países.')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Tercera tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/MariaJeannette.jpg" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('María Jeannette Paillan Fuentes', 'Cineasta-Gestora cultural.Coordinadora General Clacpi 2008 al 2015. Miembro equipo asesor Wapikoni Mobile-Canada 2015 al 2019. Directora-Fundadora Festival Internacional de Cine y las Artes Indígena en Wallmapu FicWallmapu2015 al 2023. Directora Fundación Kelluwün – Escuela de cine y las Artes de lo P.Originarios 2024. Académica en la carrera de Periodismo Universidad de La Frontera. – 2019 a la fecha')">
+        <h3>María Jeannette Paillan Fuentes
+        </h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        <p>{{ 'Cineasta-Gestora cultural.Coordinadora General Clacpi 2008 al 2015. Miembro equipo asesor Wapikoni
+            Mobile-Canada 2015 al 2019.Directora-Fundadora Festival Internacional de Cine y las Artes Indígena en
+            Wallmapu FicWallmapu2015 al 2023. Directora Fundación Kelluwün – Escuela de cine y las Artes de lo
+            P.Originarios 2024. Académica en la carrera de Periodismo Universidad de La Frontera. – 2019 a la fecha' |
+            slice:0:150 }}...</p>
+
+
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('María Jeannette Paillan Fuentes', 'Cineasta-Gestora cultural.Coordinadora General Clacpi 2008 al 2015. Miembro equipo asesor Wapikoni Mobile-Canada 2015 al 2019. Directora-Fundadora Festival Internacional de Cine y las Artes Indígena en Wallmapu FicWallmapu2015 al 2023. Directora Fundación Kelluwün – Escuela de cine y las Artes de lo P.Originarios 2024. Académica en la carrera de Periodismo Universidad de La Frontera. – 2019 a la fecha')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Cuarta tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/Jimi_Vilema.jpg" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('Jimi Vilema', 'Productor de cine ecuatoriano, ha trabajado en la producción de varios largometrajes y cortometrajes. En 2020 funda la productora Toquilla Films, para el desarrollo de proyectos de terror y fantasía juntando a jóvenes talentos y grandes profesionales del cine ')">
+        <h3>Jimi Vilema
+        </h3>
+        <p>{{ 'Productor de cine ecuatoriano, ha trabajado en la producción de varios largometrajes y cortometrajes. En
+            2020 funda la productora Toquilla Films, para el desarrollo de proyectos de terror y fantasía juntando a
+            jóvenes talentos y grandes profesionales del cine ' |
+            slice:0:150 }}...</p>
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('Jimi Vilema','Productor de cine ecuatoriano, ha trabajado en la producción de varios largometrajes y cortometrajes. En 2020 funda la productora Toquilla Films, para el desarrollo de proyectos de terror y fantasía juntando a jóvenes talentos y grandes profesionales del cine ')">
+            Leer más...
+        </button>
+    </div>
+
+</div>
+
+
+<h2
+    style="text-align: center; font-size: 1.85rem; font-weight:900; color: #333; padding-top: 3%; padding-bottom: 1%;line-height: 1; ">
+    JURADO CORTOS UNIVERSITARIOS
+</h2>
+
+<div class="card-grid">
+    <!-- Primera tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/CesarSolano.jpg" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('César Solano',  'Licenciado en Filosofía por la Universidad de Cuenca, con un Máster en Estudios Ibéricos e Iberoamericanos de la KU Leuven y un Doctorado en Filosofía y Ciencias del Lenguaje de la Universidad Autónoma de Madrid. Es docente en la Universidad de Cuenca, donde imparte clases en las carreras de Filosofía y Cine, y ha sido docente invitado en la Universidad del Azuay. Ha presentado su trabajo en diversos países y cuenta con publicaciones en revistas nacionales e internacionales, además de dirigir la carrera de Pedagogía de las Artes y las Humanidades, centrándose en la filosofía latinoamericana, del arte y del cine.')">
+        <h3>César Solano</h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        {{'Licenciado en Filosofía por la Universidad de Cuenca, con un Máster en Estudios Ibéricos e Iberoamericanos de
+        la KU Leuven y un Doctorado en Filosofía y Ciencias del Lenguaje de la Universidad Autónoma de Madrid. Es
+        docente en la Universidad de Cuenca, donde imparte clases en las carreras de Filosofía y Cine, y ha sido docente
+        invitado en la Universidad del Azuay. Ha presentado su trabajo en diversos países y cuenta con publicaciones en
+        revistas nacionales e internacionales, además de dirigir la carrera de Pedagogía de las Artes y las Humanidades,
+        centrándose en la filosofía latinoamericana, del arte y del cine.' | slice:0:150}}
+
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('César Solano',  'Licenciado en Filosofía por la Universidad de Cuenca, con un Máster en Estudios Ibéricos e Iberoamericanos de la KU Leuven y un Doctorado en Filosofía y Ciencias del Lenguaje de la Universidad Autónoma de Madrid. Es docente en la Universidad de Cuenca, donde imparte clases en las carreras de Filosofía y Cine, y ha sido docente invitado en la Universidad del Azuay. Ha presentado su trabajo en diversos países y cuenta con publicaciones en revistas nacionales e internacionales, además de dirigir la carrera de Pedagogía de las Artes y las Humanidades, centrándose en la filosofía latinoamericana, del arte y del cine.')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Segunda tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/CarmitaRojas.jpg" alt="Mercedes Moncada" class="person-image" (click)="openDialog('Carmita Rojas', 'Poeta y narradora, autora de obras como Jaspiario e Impostergable. Ha contribuido en diversos medios
+            y antologías, destacando en La voz de eros y El poema único. Coordinadora de talleres literarios para
+            niños y jóvenes. Miembro de Vuelo de Mujer y la CCE núcleo de Chimborazo. Participante en eventos literarios
+            internacionales como la FILBO 2013 y el Congreso mundial por la paz IFLAC WORLD en Brasil 2023. Experiencia
+            como docente de Inglés en todos los niveles educativos.')">
+        <h3>Carmita Rojas</h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        <p>{{ 'Poeta y narradora, autora de obras como "Jaspiario" e "Impostergable". Ha contribuido en diversos medios
+            y antologías, destacando en "La voz de eros" y "El poema único". Coordinadora de talleres literarios para
+            niños y jóvenes. Miembro de Vuelo de Mujer y la CCE núcleo de Chimborazo. Participante en eventos literarios
+            internacionales como la FILBO 2013 y el Congreso mundial por la paz IFLAC WORLD en Brasil 2023. Experiencia
+            como docente de Inglés en todos los niveles educativos. ' | slice:0:140 }}...</p>
+
+        <button mat-button class="read-more-button" (click)="openDialog('Carmita Rojas', 'Poeta y narradora, autora de obras como Jaspiario e Impostergable. Ha contribuido en diversos medios
+            y antologías, destacando en La voz de eros y El poema único. Coordinadora de talleres literarios para
+            niños y jóvenes. Miembro de Vuelo de Mujer y la CCE núcleo de Chimborazo. Participante en eventos literarios
+            internacionales como la FILBO 2013 y el Congreso mundial por la paz IFLAC WORLD en Brasil 2023. Experiencia
+            como docente de Inglés en todos los niveles educativos.')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Tercera tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/ByronSánchez.jpg" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('Byron Sánchez', 'Licenciado en Artes Cinematográficas con mención en Guion y Dirección, y Magíster en Políticas Culturales y Gestión de las Artes. Su trabajo se centra en el cine documental, explorando narrativas de realidades diversas. Además de su labor cinematográfica, es investigador y activista político LGBTIQ+ de origen montubio, colaborando con comunidades afrodescendientes y grupos sexo-disidentes. Actualmente, se desempeña como Promotor Cultural en la Dirección de Cultura y Turismo del GAD Municipalidad de Ambato, donde impulsa el fortalecimiento de la cultura y la diversidad en su región.')">
+        <h3>Byron Sánchez
+        </h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        <p>{{ 'Licenciado en Artes Cinematográficas con mención en Guion y Dirección, y Magíster en Políticas Culturales y Gestión de las Artes. Su trabajo se centra en el cine documental, explorando narrativas de realidades diversas. Además de su labor cinematográfica, es investigador y activista político LGBTIQ+ de origen montubio, colaborando con comunidades afrodescendientes y grupos sexo-disidentes. Actualmente, se desempeña como Promotor Cultural en la Dirección de Cultura y Turismo del GAD Municipalidad de Ambato, donde impulsa el fortalecimiento de la cultura y la diversidad en su región.' |
+            slice:0:150 }}...</p>
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('Byron Sánchez', 'Licenciado en Artes Cinematográficas con mención en Guion y Dirección, y Magíster en Políticas Culturales y Gestión de las Artes. Su trabajo se centra en el cine documental, explorando narrativas de realidades diversas. Además de su labor cinematográfica, es investigador y activista político LGBTIQ+ de origen montubio, colaborando con comunidades afrodescendientes y grupos sexo-disidentes. Actualmente, se desempeña como Promotor Cultural en la Dirección de Cultura y Turismo del GAD Municipalidad de Ambato, donde impulsa el fortalecimiento de la cultura y la diversidad en su región.')">
+            Leer más...
+        </button>
+    </div>
+
+   
+
+</div>
+
+
+<h2
+    style="text-align: center; font-size: 1.85rem; font-weight:900; color: #333; padding-top: 3%; padding-bottom: 1%;line-height: 1; ">
+    JURADO CORTOS INTERNACIONALES
+</h2>
+
+<div class="card-grid">
+    <!-- Primera tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/FerriCaicedo.jpg" alt="Mercedes Moncada" class="person-image"
+            (click)="openDialog('Ferri Caicedo',  'Ferri Caicedo estudió Diseño Fotográfico en Quito y Artes y Medios de Comunicación en la Universidad Bauhaus de Weimar. En Alemania anima junto a artistas sonoros y músicos. Sus proyectos exploran arquetipos andinos y la interacción entre imagen, sonido y movimiento, destacando en animación Stop-motion. En 2022, su cortometraje Testigo del Viento recibió el Premio de Arte Multimedia de Bauhaus y más de 10 reconocimientos internacionales.')">
+        <h3>Ferri Caicedo</h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        {{'Ferri Caicedo estudió Diseño Fotográfico en Quito y Artes y Medios de Comunicación en la Universidad Bauhaus de Weimar. En Alemania anima junto a artistas sonoros y músicos. Sus proyectos exploran arquetipos andinos y la interacción entre imagen, sonido y movimiento, destacando en animación Stop-motion. En 2022, su cortometraje "Testigo del Viento" recibió el Premio de Arte Multimedia de Bauhaus y más de 10 reconocimientos internacionales.' | slice:0:150}}
+
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('Ferri Caicedo',  'Ferri Caicedo estudió Diseño Fotográfico en Quito y Artes y Medios de Comunicación en la Universidad Bauhaus de Weimar. En Alemania anima junto a artistas sonoros y músicos. Sus proyectos exploran arquetipos andinos y la interacción entre imagen, sonido y movimiento, destacando en animación Stop-motion. En 2022, su cortometraje Testigo del Viento recibió el Premio de Arte Multimedia de Bauhaus y más de 10 reconocimientos internacionales.')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Segunda tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/KevinLuna.jpg" alt="Mercedes Moncada" class="person-image" 
+            (click)="openDialog('Kevin Luna', 'Productor, director y guionista. Amante de la dramaturgia, la fotografía y el conflicto de personalidades. Nació en Riobamba - Ecuador. Desde pequeño le atrajo la evolución de personalidades en videojuegos, películas y libros.')">
+        <h3>Kevin Luna</h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        <p>{{ 'Productor, director y guionista. Amante de la dramaturgia, la fotografía y el conflicto de personalidades. Nació en Riobamba - Ecuador. Desde pequeño le atrajo la evolución de personalidades en videojuegos, películas y libros.' | slice:0:140 }}...</p>
+
+        <button mat-button class="read-more-button" (click)="openDialog('Kevin Luna', 'Productor, director y guionista. Amante de la dramaturgia, la fotografía y el conflicto de personalidades. Nació en Riobamba - Ecuador. Desde pequeño le atrajo la evolución de personalidades en videojuegos, películas y libros.')">
+            Leer más...
+        </button>
+    </div>
+
+    <!-- Tercera tarjeta -->
+    <div class="person-card">
+        <img src="assets/img/jurados/RafaelPlaza.jpg" alt="Rafael Plaza Andrade" class="person-image"
+            (click)="openDialog('Rafael Plaza Andrade', 'Realizador cinematográfico, escritor sobre cine y gestor cultural. Ha sido acreditado como prensa en más de 30 festivales internacionales que incluyen Mar del Plata, Locarno, Cannes, Berlín o Venecia. Seleccionado como parte del Talents del Festival BAFICI 2021, y ser parte del jurado a la Mejor Ópera Prima Latinoamericana en el Festival de Mar del Plata 2021.')">
+        <h3>Rafael Plaza Andrade
+        </h3>
+        <!-- <p><strong>Directora. Nicaragua/España.</strong></p> -->
+        <p>{{ 'Realizador cinematográfico, escritor sobre cine y gestor cultural. Ha sido acreditado como prensa en más de 30 festivales internacionales que incluyen Mar del Plata, Locarno, Cannes, Berlín o Venecia. Seleccionado como parte del Talents del Festival BAFICI 2021, y ser parte del jurado a la Mejor Ópera Prima Latinoamericana en el Festival de Mar del Plata 2021.' |
+            slice:0:150 }}...</p>
+
+        <button mat-button class="read-more-button"
+            (click)="openDialog('Rafael Plaza Andrade', 'Realizador cinematográfico, escritor sobre cine y gestor cultural. Ha sido acreditado como prensa en más de 30 festivales internacionales que incluyen Mar del Plata, Locarno, Cannes, Berlín o Venecia. Seleccionado como parte del Talents del Festival BAFICI 2021, y ser parte del jurado a la Mejor Ópera Prima Latinoamericana en el Festival de Mar del Plata 2021.')">
+            Leer más...
+        </button>
+    </div>
+
+   
+
+</div>

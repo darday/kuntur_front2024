@@ -1,0 +1,43 @@
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 40px 0;
+    padding: 0% 10%;
+  }
+  
+  .person-card {
+    width: 29%;
+    text-align: left;
+    /* cursor: pointer; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    padding: 1%;
+  }
+  
+  .person-card:hover {
+    transform: scale(1.05); /* Animación al pasar el mouse */
+  }
+  
+  .person-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Asegura que las imágenes no se deformen */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .read-more-button {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .person-card {
+      width: 100%; /* En pantallas pequeñas, las tarjetas ocuparán el 100% del ancho */
+    }
+  }
+  
