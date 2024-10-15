@@ -42,6 +42,9 @@ export class CronogramaComponent implements OnInit {
   isLoading = true;  // Variable para rastrear el estado de carga
   haveFilm = false;
 
+  urlbase = environment.apiUrl;
+
+
   dates: { id: number, fecha: string }[] = [];  // Inicializado con un array vacío
   activities: { 
     id_activities:number | any,
