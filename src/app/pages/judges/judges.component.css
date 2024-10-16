@@ -1,7 +1,8 @@
 .card-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* Cambiado a 'center' para centrar las tarjetas */
+
     gap: 20px;
     margin: 40px 0;
     padding: 0% 10%;
