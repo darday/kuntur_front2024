@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     gap: 20px;
     /* Este es el espacio entre las tarjetas normales */
-    justify-content: space-between;
+    justify-content: center;
     padding: 3% 3%;
 }
 

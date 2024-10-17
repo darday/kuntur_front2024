@@ -1,0 +1,18 @@
+<div class="cronograma-title animate__animated animate__fadeInRight">
+    <p style="text-align: right; font-size: 1.5rem;">CRONOGRAMA 2024</p>
+</div>
+
+<!-- <app-cronograma></app-cronograma> -->
+
+<app-cronograma-without-img></app-cronograma-without-img>
+
+<h2
+    style="text-align: center; font-size: 1.85rem; font-weight:900; color: #333; padding-top: 3%; padding-bottom: 1%;line-height: 1; ">
+    GALERÍA DE FOTOS
+</h2>
+
+<div class="gallery-grid">
+    <div class="gallery-item" *ngFor="let image of images; let i = index" (click)="openDialog(i)">
+        <img [src]="image.image" alt="gallery image" class="gallery-image">
+    </div>
+</div>
