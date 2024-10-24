@@ -34,7 +34,9 @@ export class GalleryComponent {
 
   getData() {
     const url = `${environment.apiUrl}/list_gallery`;
-    const apiUrlStorage = `${environment.apiUrlStorage}`;
+    const apiUrlStorage = `${environment.apiUrlStorageGalery}`;
+    console.log("****************");
+    console.log(apiUrlStorage);
 
     // Realizamos la solicitud al endpoint
     this.http.get<any[]>(url).subscribe(response => {

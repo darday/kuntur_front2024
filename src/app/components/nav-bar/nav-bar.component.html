@@ -43,8 +43,8 @@
 
     <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
       OFICIAL</a>
-    <!-- <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }">KUNTUR LAB</a>
-    <a mat-button routerLink="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }">GALERÍA</a> -->
+    <!-- <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }">KUNTUR LAB</a> -->
+    <a mat-button href="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }">GALERÍA</a>
   </div>
 
   <!-- Menú Responsive (Icono) -->
@@ -75,4 +75,6 @@
 
   <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }"
     (click)="toggleMenu()">SELECCIÓN OFICIAL</a>
+  <a mat-button href="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }"
+    (click)="toggleMenu()">GALERÍA</a>
 </div>
