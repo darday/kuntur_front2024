@@ -1,0 +1,41 @@
+
+.video-container {
+    position: relative;
+    width: 70%; /* Ajusta este valor según el ancho deseado */
+    padding-bottom: 35.00%; /* Proporción 16:9 (altura/ancho = 9/16 = 0.5625) */
+    height: 0; /* Mantén height en 0 para que la altura dependa del padding */
+    overflow: hidden; /* Evita que el contenido se salga del contenedor */
+    margin: 0 auto; /* Centra el video horizontalmente */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* El iframe ocupará el 100% del ancho del contenedor */
+    height: 100%; /* La altura será ajustada automáticamente en función del contenedor */
+    border: none; /* Quita el borde del iframe */
+}
+
+
+
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+    }
+
+    .news-image {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%; /* El contenedor ocupará el 100% del ancho disponible */
+        padding-bottom: 56.25%; /* Mantiene la proporción de 16:9 (altura/ancho = 9/16 = 0.5625) */
+        height: 0; /* La altura inicial es 0, se ajusta con el padding */
+        overflow: hidden; /* Evita que el contenido se salga del contenedor */
+        margin: 0 auto;
+    
+    }
+}

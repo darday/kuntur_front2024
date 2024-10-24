@@ -36,7 +36,7 @@
       <!-- Submenú para pantallas grandes -->
       <div class="festival-submenu" *ngIf="submenuOpen">
         <a mat-button href="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }">JURADO</a>
-        <!-- <a mat-button routerLink="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }">EQUIPO</a> -->
+        <a mat-button href="/equipo"  [ngClass]="{'active': isRouteActive('/equipo') }">EQUIPO</a>
         <a mat-button href="/acerca-del-festival"  [ngClass]="{'active': isRouteActive('/acerca-del-festival') }">ACERCA DEL FESTIVAL</a>
       </div>
     </div>
@@ -64,9 +64,9 @@
       <a mat-button href="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }"
         (click)="toggleMenu()">JURADO
       </a>
-      <!-- <a mat-button routerLink="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }"
+      <a mat-button href="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }"
         (click)="toggleMenu()">EQUIPO
-      </a> -->
+      </a>
       <a mat-button href="/acerca-del-festival" [ngClass]="{'active': isRouteActive('/acerca-del-festival') }"
         (click)="toggleMenu()">ACERCA DEL FESTIVAL
       </a>
