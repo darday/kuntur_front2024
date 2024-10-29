@@ -35,15 +35,33 @@
 
       <!-- Submenú para pantallas grandes -->
       <div class="festival-submenu" *ngIf="submenuOpen">
-        <a mat-button href="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }">JURADO</a>
-        <a mat-button href="/equipo"  [ngClass]="{'active': isRouteActive('/equipo') }">EQUIPO</a>
-        <a mat-button href="/acerca-del-festival"  [ngClass]="{'active': isRouteActive('/acerca-del-festival') }">ACERCA DEL FESTIVAL</a>
+        <a mat-button href="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }">Jurado</a>
+        <a mat-button href="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }">Equipo</a>
+        <a mat-button href="/acerca-del-festival" [ngClass]="{'active': isRouteActive('/acerca-del-festival') }">Acerca
+          del festival</a>
       </div>
     </div>
 
-    <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
-      OFICIAL</a>
-    <!-- <a mat-button routerLink="/kuntur-lab" [ngClass]="{'active': isRouteActive('/kuntur-lab') }">KUNTUR LAB</a> -->
+    <!-- <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
+      OFICIAL</a> -->
+
+    <div class="selection-menu-container" (mouseenter)="openSelectionMenu()" (mouseleave)="closeSelectionMenu()">
+      <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
+        OFICIAL
+      </a>
+
+      <!-- Submenú de "Selección Oficial" para pantallas grandes -->
+      <div class="selection-submenu" *ngIf="selectionMenuOpen">
+        <a mat-button href="/largometraje-ficcion" [ngClass]="{'active': isRouteActive('/largometraje-ficcion') }">Largometrajes Ficción</a>
+        <a mat-button href="/largometraje-documental" [ngClass]="{'active': isRouteActive('/largometraje-documental') }">Largometrajes Documental</a>
+        <a mat-button href="/cortometraje-ficcion" [ngClass]="{'active': isRouteActive('/cortometraje-ficcion') }">Cortometrajes Ficción</a>
+        <a mat-button href="/cortometraje-documental" [ngClass]="{'active': isRouteActive('/cortometraje-documental') }">Cortometrajes Documental</a>
+        <a mat-button href="/cortometraje-univ-ficcion" [ngClass]="{'active': isRouteActive('/cortometraje-univ-ficcion') }">Corto Universitario Ficción</a>
+        <a mat-button href="/cortometraje-univ-documental" [ngClass]="{'active': isRouteActive('/cortometraje-univ-documental') }">Corto Universitario Documental</a>
+        <a mat-button href="/cortometraje-internacionales" [ngClass]="{'active': isRouteActive('/cortometraje-internacionales') }">Cortometrajes Internacionales</a>
+      </div>
+    </div>
+    <a mat-button href="/ediciones" [ngClass]="{'active': isRouteActive('/ediciones') }">EDICIONES PASADAS</a>
     <a mat-button href="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }">GALERÍA</a>
   </div>
 
@@ -61,20 +79,23 @@
   <div (click)="toggleFestivalSubMenu()" class="festival-mobile-menu">
     <a mat-button>EL FESTIVAL</a>
     <div *ngIf="festivalSubMenuOpen" class="festival-submenu-mobile">
-      <a mat-button href="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }"
-        (click)="toggleMenu()">JURADO
+      <a mat-button href="/jurado" [ngClass]="{'active': isRouteActive('/jurado') }" (click)="toggleMenu()">Jurado
       </a>
-      <a mat-button href="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }"
-        (click)="toggleMenu()">EQUIPO
+      <a mat-button href="/equipo" [ngClass]="{'active': isRouteActive('/equipo') }" (click)="toggleMenu()">Equipo
       </a>
       <a mat-button href="/acerca-del-festival" [ngClass]="{'active': isRouteActive('/acerca-del-festival') }"
-        (click)="toggleMenu()">ACERCA DEL FESTIVAL
+        (click)="toggleMenu()">Acerca del festival
       </a>
     </div>
   </div>
 
   <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }"
     (click)="toggleMenu()">SELECCIÓN OFICIAL</a>
-  <a mat-button href="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }"
-    (click)="toggleMenu()">GALERÍA</a>
+
+
+
+  <a mat-button href="/ediciones" [ngClass]="{'active': isRouteActive('/ediciones') }" (click)="toggleMenu()">EDICIONES
+    PASADAS</a>
+
+  <a mat-button href="/galeria" [ngClass]="{'active': isRouteActive('/galeria') }" (click)="toggleMenu()">GALERÍA</a>
 </div>

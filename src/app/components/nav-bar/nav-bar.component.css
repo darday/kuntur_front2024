@@ -3,10 +3,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 3.5% 2%;
-  height: 70px; /* Altura fija para el navbar */
+  height: 70px;
+  /* Altura fija para el navbar */
   background-color: #fff;
   color: #333;
-  position: fixed; /* Fija la barra en la parte superior */
+  position: fixed;
+  /* Fija la barra en la parte superior */
   top: 0;
   left: 0;
   right: 0;
@@ -60,14 +62,17 @@
   display: none;
 }
 
-.menu-options a.active, .dropdown-menu a.active {
+.menu-options a.active,
+.dropdown-menu a.active {
   color: #ab7597;
   font-weight: bold;
   border-bottom: 2px solid #ab7597;
 }
 
-.menu-options a.active:hover, .dropdown-menu a.active:hover {
-  background-color: transparent; /* Para que no cambie de color al pasar el ratón si está activo */
+.menu-options a.active:hover,
+.dropdown-menu a.active:hover {
+  background-color: transparent;
+  /* Para que no cambie de color al pasar el ratón si está activo */
 }
 
 .social-media-icons {
@@ -109,7 +114,7 @@
 .festival-submenu-mobile {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #fcdb00;
   /* align-items: center; */
 }
 
@@ -124,6 +129,41 @@
   text-align: center;
 }
 
+.selection-menu-container {
+  position: relative;
+  /* Necesario para la posición del submenú */
+}
+
+.selection-submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+/* Mostrar el submenú de "Selección Oficial" al hacer hover */
+.selection-menu-container:hover .selection-submenu {
+  display: block;
+}
+
+.selection-submenu a {
+  padding: 10px 20px;
+  display: block;
+  white-space: nowrap;
+  color: #333;
+  text-decoration: none;
+}
+
+.selection-submenu a:hover {
+  background-color: #f0f0f0;
+  color: #ab7597;
+}
+
+
 
 /* Estilos para móviles */
 @media (max-width: 960px) {
@@ -136,41 +176,46 @@
     background-color: #fff;
     color: #333;
   }
-  
+
 
   .festival-title {
     font-size: 12px;
     line-height: 1;
   }
-  
+
   .festival-logo {
     height: 40px;
   }
-  
+
   .menu-options {
-    display: none; /* Esconde el menú en pantallas pequeñas */
+    display: none;
+    /* Esconde el menú en pantallas pequeñas */
   }
-  
+
   .menu-icon {
-    display: block; /* Muestra el icono de menú en pantallas pequeñas */
+    display: block;
+    /* Muestra el icono de menú en pantallas pequeñas */
   }
-  
-/* Cambiar la posición del menú desplegable */
-.dropdown-menu {
-  display: flex;
-  flex-direction: column;
-  position: fixed; /* Cambiado a fixed */
-  top: 0; /* Asegura que esté en la parte superior de la vista, no de la página */
-  right: 0;
-  background-color: white;
-  width: 100%;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  z-index: 1000;
-  /* Opcional: Si prefieres que comience debajo del navbar, ajusta el valor de top */
-  top: 70px; /* Ajusta esto según la altura de tu navbar */
-}
-  
+
+  /* Cambiar la posición del menú desplegable */
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* Cambiado a fixed */
+    top: 0;
+    /* Asegura que esté en la parte superior de la vista, no de la página */
+    right: 0;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    /* Opcional: Si prefieres que comience debajo del navbar, ajusta el valor de top */
+    top: 70px;
+    /* Ajusta esto según la altura de tu navbar */
+  }
+
   .dropdown-menu a {
     padding: 10px;
     font-size: 14px;
@@ -178,7 +223,7 @@
     text-align: center;
     border-bottom: 1px solid #f1f1f1;
   }
-  
+
   .dropdown-menu a:hover {
     background-color: #f1f1f1;
     color: #ab7597;

@@ -15,6 +15,7 @@ import { AcercaFestivalComponent } from './pages/acerca-festival/acerca-festival
 import { JudgesComponent } from './pages/judges/judges.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { TeamComponent } from './pages/team/team.component';
+import { PastEditionComponent } from './pages/past-edition/past-edition.component';
 
 export const routes: Routes = [
     { path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },  // Página principal
@@ -32,9 +33,9 @@ export const routes: Routes = [
     { path: 'jurado', component: JudgesComponent },  // Ruta para las noticias individuales con el ID
     { path: 'equipo', component: TeamComponent },  
     
-    
     { path: 'galeria', component: GalleryComponent },  // Ruta para las noticias individuales con el ID
     
+    { path: 'ediciones', component: PastEditionComponent },  // Ruta para las noticias individuales con el ID
     
     { path: 'single-film/:id', component: SingleFilmComponent },  // Ruta para las noticias individuales con el ID
 ];

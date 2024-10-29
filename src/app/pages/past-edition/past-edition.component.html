@@ -1,0 +1,39 @@
+<div class="cronograma-title animate__animated animate__fadeInRight">
+  <p style="text-align: right; font-size: 1.5rem;">CRONOGRAMA 2024</p>
+</div>
+
+<!-- <app-cronograma></app-cronograma> -->
+
+<app-cronograma-without-img></app-cronograma-without-img>
+
+<h2
+  style="text-align: center; font-size: 1.85rem; font-weight:900; color: #333; padding-top: 3%; padding-bottom: 1%;line-height: 1; ">
+  EDICIONES PASADAS KUNTURÑAWI
+</h2>
+
+<div class="timeline-container" style="padding-bottom: 5%;">
+  <!-- Botones -->
+  <div class="year-buttons">
+    <button *ngFor="let year of years; let i = index" (click)="selectYear(i)"
+      [ngClass]="{'active': selectedIndex === i}">
+      {{ year }}
+    </button>
+  </div>
+
+  <!-- Contenedor de la imagen y el texto -->
+  <div class="content-container">
+    <!-- Imagen a la izquierda -->
+    <div class="image-container" style="margin-left: 10%; margin-right: 10%;">
+      <img [src]="selectedContent.image" alt="Poster {{ selectedContent.year }}" class="poster-image">
+    </div>
+
+    <!-- Texto a la derecha -->
+    <div class="text-container" style="text-align: justify;">
+      <p style="padding: 5%;">{{ selectedContent.text }}</p>
+    </div>
+  </div>
+</div>
+
+<app-patrocinadores></app-patrocinadores>
+
+<app-suscription></app-suscription>
