@@ -55,7 +55,7 @@
 }
 
 .menu-options a:hover {
-  color: #ab7597;
+  color: #405a34;
 }
 
 .menu-icon {
@@ -64,9 +64,9 @@
 
 .menu-options a.active,
 .dropdown-menu a.active {
-  color: #ab7597;
+  color: #405a34;
   font-weight: bold;
-  border-bottom: 2px solid #ab7597;
+  border-bottom: 2px solid #405a34;
 }
 
 .menu-options a.active:hover,
@@ -87,7 +87,7 @@
 }
 
 .social-media-icons a:hover {
-  color: #ab7597;
+  color: #405a34;
 }
 
 /* Menú para pantallas grandes */
@@ -160,7 +160,7 @@
 
 .selection-submenu a:hover {
   background-color: #f0f0f0;
-  color: #ab7597;
+  color: #405a34;
 }
 
 
@@ -226,7 +226,7 @@
 
   .dropdown-menu a:hover {
     background-color: #f1f1f1;
-    color: #ab7597;
+    color: #405a34;
   }
 
   .festival-submenu {

@@ -149,8 +149,8 @@ export class CronogramaWithoutImgComponent {
     const isSmallScreen = window.innerWidth < 768;
     if (url === '/' || url.startsWith('/home')) {
       this.currentImage = isSmallScreen
-        ? 'assets/carousel/celu/PORTADA-PRINCIPAL-CELU.png'
-        : 'assets/carousel/PORTADA-PRINCIPAL.png';
+        ? 'assets/carousel/celu/portadacel.png'
+        : 'assets/carousel/PORTADAPC.png';
     } else if (url.startsWith('/seleccion-oficial')) {
       this.currentImage = isSmallScreen
         ? 'assets/carousel/celu/portada-seleccion-oficial-celu.png'
