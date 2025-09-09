@@ -16,7 +16,7 @@
 
 .image-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -52,6 +52,11 @@
     height: 50vh; /* O ajusta según tus necesidades */
 }
 
+.tabla-fechas{
+    padding: 0% 5%; 
+    padding-bottom: 5%;
+}
+
 
 @media (max-width: 768px) {
     .image-container {
@@ -61,5 +66,10 @@
     .news-image {
         height: auto;
         max-height: 300px;
+    }
+
+    .tabla-fechas{
+        padding: 0% 0%; 
+        padding-bottom: 5%;
     }
 }

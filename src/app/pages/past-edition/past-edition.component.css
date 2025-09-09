@@ -1,0 +1,92 @@
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.year-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Permite que los botones se ajusten en varias filas si es necesario */
+
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.year-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #d1d1d1;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.year-buttons button.active {
+    background-color: #4056a1;
+    /* Fondo azul para el botón activo */
+    color: white;
+}
+
+.year-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.image-container {
+    flex: 1;
+}
+
+.poster-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-container {
+        margin-top: 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .year-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        /* Muestra dos columnas en pantallas pequeñas */
+    }
+
+    .year-buttons button {
+        font-size: 14px;
+    }
+}

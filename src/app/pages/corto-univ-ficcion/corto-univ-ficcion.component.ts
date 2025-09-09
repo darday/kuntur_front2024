@@ -45,7 +45,7 @@ export class CortoUnivFiccionComponent {
   }
 
   getData() {
-    const url = `${environment.apiUrl}/list_cortodoc`;
+    const url = `${environment.apiUrl}/list_cortounific`;
     const apiUrlStorage = `${environment.apiUrlStorage}`;
 
     // Realizamos la solicitud al endpoint

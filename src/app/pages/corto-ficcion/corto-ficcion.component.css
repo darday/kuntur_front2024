@@ -1,7 +1,7 @@
 .image-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 40px;
     margin: 40px 0;
     padding: 0% 15%;
@@ -69,6 +69,6 @@
 
     .hover-image {
         height: auto;
-        width: 64%;
+        width: 75%;
     }
 }

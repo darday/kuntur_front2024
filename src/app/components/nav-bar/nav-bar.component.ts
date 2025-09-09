@@ -18,6 +18,8 @@ export class NavBarComponent {
   submenuOpen = false; // Controla el submenú de "EL FESTIVAL"
   festivalSubMenuOpen = false; // Controla el submenú en pantallas pequeñas
 
+  selectionMenuOpen = false;
+
 
 
   activeRoute = '/'; // Ruta inicial marcada por defecto
@@ -52,5 +54,12 @@ export class NavBarComponent {
     this.festivalSubMenuOpen = !this.festivalSubMenuOpen;
   }
 
+  openSelectionMenu() {
+    this.selectionMenuOpen = true;
+  }
+  
+  closeSelectionMenu() {
+    this.selectionMenuOpen = false;
+  }
 
 }

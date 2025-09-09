@@ -1,0 +1,5 @@
+<div class="dialog-container">
+    <button mat-button class="nav-button left" (click)="prevImage()">&#10094;</button>
+    <img [src]="data.images[data.currentIndex].image" alt="gallery large image" class="dialog-image">
+    <button mat-button class="nav-button right" (click)="nextImage()">&#10095;</button>
+</div>
