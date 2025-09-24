@@ -31,7 +31,7 @@
     <a mat-button href="/" [ngClass]="{'active': isRouteActive('/') }">INICIO</a>
 
     <div class="festival-menu-container" (mouseenter)="openSubmenu()" (mouseleave)="closeSubmenu()">
-      <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }">EL FESTIVAL</a>
+      <a mat-button routerLink="/festival" [ngClass]="{'active': isRouteActive('/festival') }">EL FESTIVAL <i class="fas fa-caret-down"></i> </a>
 
       <!-- Submenú para pantallas grandes -->
       <div class="festival-submenu" *ngIf="submenuOpen">
@@ -47,7 +47,7 @@
 
     <div class="selection-menu-container" (mouseenter)="openSelectionMenu()" (mouseleave)="closeSelectionMenu()">
       <a mat-button href="/seleccion-oficial" [ngClass]="{'active': isRouteActive('/seleccion-oficial') }">SELECCIÓN
-        OFICIAL
+        OFICIAL <i class="fas fa-caret-down"></i>
       </a>
 
       <!-- Submenú de "Selección Oficial" para pantallas grandes -->
