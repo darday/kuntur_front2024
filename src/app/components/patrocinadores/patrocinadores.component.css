@@ -1,5 +1,5 @@
 .sponsors-section {
-    background-color: #3c384d; /* Color de fondo gris */
+    background-color: #405a34; /* Color de fondo gris */
     text-align: center;
     padding: 3% 3%;
     padding-bottom: 5%;
@@ -27,7 +27,7 @@
     object-fit: contain;
     padding: 1%;
     padding-top: 1%;
-    background-color: #3c384d;
+    background-color: #405a34;
     /* border-radius: 8px; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
@@ -78,7 +78,7 @@
     object-fit: contain;
     padding: 1%;
     padding-top: 1%;
-    background-color: #3c384d;
+    background-color: #405a34;
     /* border-radius: 8px; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
